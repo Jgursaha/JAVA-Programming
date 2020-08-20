@@ -1,0 +1,41 @@
+package com.udacity.jwdnd.c1.review.Controller;
+
+import com.udacity.jwdnd.c1.review.Model.ChatForm;
+import com.udacity.jwdnd.c1.review.Service.MessageService;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+
+@Controller
+@RequestMapping("/chat")
+public class ChatController {
+
+    private MessageService messageService;
+
+    public ChatController(MessageService messageService) {
+        this.messageService = messageService;
+    }
+
+    @GetMapping
+    public String showMessages(ChatForm chatForm, Model model){
+        model.addAttribute("messages", this.messageService.getMessageList());
+        return "chat";
+    }
+
+    @PostMapping
+    public String updateMessages(ChatForm chatForm, Model model) {
+        this.messageService.addChatMessage(chatForm);
+        chatForm.setMessageText("");
+        model.addAttribute("messages", this.messageService.getMessageList());
+        return "chat";
+    }
+
+    @ModelAttribute("allMessageTypes")
+    public String[] allMessageTypes(){
+        return new String[] {"Say", "Shout", "Whisper"};
+    }
+}
