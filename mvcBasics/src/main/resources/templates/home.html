@@ -8,6 +8,11 @@
     <title>Home</title>
 </head>
 <body>
-<h1>Hello, homepage!</h1>
+<form action="#" th:action="@{'/home'}" th:object="${messageForm}" method="POST">
+    <label for="highFiveText">Send a high five to someone: </label>
+    <input type="text" id="highFiveText" name="highFiveText" th:field="*{text}">
+    <input type="submit">
+</form>
+<h1 th:each="msg : ${greetings}" th:text="${msg}" th:unless="${msg.contains('Goodbye')}">Hello, homepage!</h1>
 </body>
 </html>

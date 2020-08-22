@@ -14,9 +14,10 @@ public class MessageService {
     private List<ChatMessage> messageList;
 
 
+
     @PostConstruct
     public void postConstruct(){
-        System.out.println("In MessageService constructor");
+        System.out.println("After MessageService constructor");
         this.messageList = new ArrayList<>();
     }
 

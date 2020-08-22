@@ -1,6 +1,7 @@
 package com.udacity.jwdnd.c1.review.Controller;
 
 import com.udacity.jwdnd.c1.review.Model.ChatForm;
+import com.udacity.jwdnd.c1.review.Model.ChatMessage;
 import com.udacity.jwdnd.c1.review.Service.MessageService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,6 +23,8 @@ public class ChatController {
 
     @GetMapping
     public String showMessages(ChatForm chatForm, Model model){
+        System.out.println("In SHOW MESSAGES");
+        System.out.println("Length of messageService List"+ this.messageService.getMessageList().size());
         model.addAttribute("messages", this.messageService.getMessageList());
         return "chat";
     }
