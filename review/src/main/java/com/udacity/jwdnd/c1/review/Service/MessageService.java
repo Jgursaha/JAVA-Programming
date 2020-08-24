@@ -2,28 +2,33 @@ package com.udacity.jwdnd.c1.review.Service;
 
 import com.udacity.jwdnd.c1.review.Model.ChatForm;
 import com.udacity.jwdnd.c1.review.Model.ChatMessage;
+import com.udacity.jwdnd.c1.review.Mapper.MessageMapper;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class MessageService {
 
-    private List<ChatMessage> messageList;
+    //private List<ChatMessage> messageList;
+    private MessageMapper messageMapper;
 
 
+    public MessageService(MessageMapper messageMapper) {
+        this.messageMapper = messageMapper;
+    }
 
     @PostConstruct
     public void postConstruct(){
         System.out.println("After MessageService constructor");
-        this.messageList = new ArrayList<>();
+        //this.messageList = new ArrayList<>();
     }
 
     public void addChatMessage(ChatForm chatFormMessage){
         ChatMessage newMessage = new ChatMessage();
         newMessage.setUserName(chatFormMessage.getUserName());
+        System.out.println("In MessageService.addChatMessage");
 
         switch(chatFormMessage.getMessageType()){
             case "Say":
@@ -36,11 +41,17 @@ public class MessageService {
                 newMessage.setChatMessage(chatFormMessage.getMessageText().toLowerCase());
                 break;
         }
-
-        this.messageList.add(newMessage);
+        System.out.println("After Switch the message text to be inserted" + newMessage.getChatMessage());
+        //this.messageList.add(newMessage);
+        messageMapper.insert(newMessage);
     }
 
     public List<ChatMessage> getMessageList() {
-        return messageList;
+        System.out.println("IN getMessageList, length of message list" + messageMapper.getMessages().size());
+        if(messageMapper.getMessages().size() > 0){
+            System.out.println("IN getMessageList, text of first message" + messageMapper.getMessages().get(0).getChatMessage());
+        }
+
+        return messageMapper.getMessages();
     }
 }

@@ -1,7 +1,7 @@
-package com.udacity.jwdnd.spring_security_basics.controller;
+package com.udacity.jwdnd.c1.review.Controller;
 
-import com.udacity.jwdnd.spring_security_basics.model.User;
-import com.udacity.jwdnd.spring_security_basics.service.UserService;
+import com.udacity.jwdnd.c1.review.Model.User;
+import com.udacity.jwdnd.c1.review.Service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

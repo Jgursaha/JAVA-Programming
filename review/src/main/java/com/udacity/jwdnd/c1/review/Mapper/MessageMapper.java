@@ -13,7 +13,11 @@ public interface MessageMapper {
     @Select("SELECT * FROM MESSAGES")
     List<ChatMessage> getMessages();
 
-    @Insert("INSERT INTO MESSAGES (username, messagetext) VALUES(#{userName}, #{chatMessage})")
+    //@Insert("INSERT INTO MESSAGES (username, messagetext) VALUES (#{userName}, #{chatMessage})")
+    //@Options(useGeneratedKeys = true, keyProperty = "messageId")
+    //int insert(ChatMessage chatMessage);
+
+    @Insert("INSERT INTO MESSAGES (username, messagetext) VALUES (#{userName}, #{chatMessage})")
     @Options(useGeneratedKeys = true, keyProperty = "messageId")
     int insert(ChatMessage chatMessage);
 }

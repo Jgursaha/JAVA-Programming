@@ -3,19 +3,25 @@
     <meta charset="UTF-8">
     <title>My Chat Application</title>
 </head>
+
 <body>
 
-<form action="#" th:action="@{'/chat'}" th:object="${chatForm}"  method="POST"  >
-    <label for="username">Username:</label>
-    <input id="username" type="text" th:field="*{userName}">
+<form th:object="${chatForm}" action="#"  th:action="@{/chat}"   method="POST"  >
+
+    <!--
+        <label for="username">Username:</label>
+        <input id="username" type="text" th:field="*{userName}">
+    -->
+
     <label for="messageText">Message Text:</label>
     <input id="messageText" type="text" th:field="*{messageText}">
+
     <label for="messageType">Message Type: </label>
     <select id="messageType" th:field="*{messageType}">
         <option
                 th:each="type: ${allMessageTypes}"
                 th:value="${type}"
-                th:text="${type}"
+                th:text="${type}">
 
                 Say
         </option>
@@ -23,8 +29,11 @@
     <input type="submit">
 </form>
 
-<div th:each="msg : ${messages}"></div>
+<div th:each="msg : ${messages}">
 <span  th:text="${msg.userName}">UserName</span>:
 <span th:text="${msg.chatMessage}">Hello, homepage!</span>
+</div>
+
 </body>
+
 </html>

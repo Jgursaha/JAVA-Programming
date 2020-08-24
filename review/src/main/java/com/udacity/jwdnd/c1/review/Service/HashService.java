@@ -1,4 +1,4 @@
-package com.udacity.jwdnd.spring_security_basics.service;
+package com.udacity.jwdnd.c1.review.Service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
