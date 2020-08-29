@@ -40,18 +40,10 @@ public class ChatController {
     @PostMapping
     public String updateMessages(Authentication authentication, ChatForm chatForm, Model model) {
 
-        //String username;
-        // Get the current logged in user
-        //Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        //if (principal instanceof UserDetails) {
-        //    username = ((UserDetails)principal).getUsername();
-        //} else {
-        //    username = principal.toString();
-        //}
         chatForm.setUserName(authentication.getName());
 
         this.messageService.addChatMessage(chatForm);
-        //chatForm.setMessageText("");
+        chatForm.setMessageText("");
         model.addAttribute("messages", this.messageService.getMessageList());
         return "chat";
     }

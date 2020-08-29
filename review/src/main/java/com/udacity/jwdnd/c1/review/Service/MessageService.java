@@ -6,6 +6,7 @@ import com.udacity.jwdnd.c1.review.Mapper.MessageMapper;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -42,14 +43,18 @@ public class MessageService {
                 break;
         }
         System.out.println("After Switch the message text to be inserted" + newMessage.getChatMessage());
-        //this.messageList.add(newMessage);
-        messageMapper.insert(newMessage);
+
+        messageMapper.addMessage(newMessage);
+        System.out.println("In addChatMessage - This is what has been inserted so far:");
+
     }
 
     public List<ChatMessage> getMessageList() {
         System.out.println("IN getMessageList, length of message list" + messageMapper.getMessages().size());
         if(messageMapper.getMessages().size() > 0){
             System.out.println("IN getMessageList, text of first message" + messageMapper.getMessages().get(0).getChatMessage());
+            System.out.println("IN getMessageList, username of first message" + messageMapper.getMessages().get(0).getUserName());
+            System.out.println("IN getMessageList, messageID of first message" + messageMapper.getMessages().get(0).getMessageId());
         }
 
         return messageMapper.getMessages();

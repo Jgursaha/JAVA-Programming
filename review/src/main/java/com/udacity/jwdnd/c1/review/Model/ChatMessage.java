@@ -1,5 +1,7 @@
 package com.udacity.jwdnd.c1.review.Model;
 
+
+
 public class ChatMessage {
 
     private Integer messageId;
