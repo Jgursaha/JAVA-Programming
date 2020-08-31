@@ -36,13 +36,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         //http.logout().logoutSuccessUrl("/login?logout").permitAll();
         http.logout()
-                .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
                 .logoutSuccessUrl("/login?logout")
-                .invalidateHttpSession(true)        // set invalidation state when logout
-                .deleteCookies("JSESSIONID")
-                .and()
-                .exceptionHandling()
-                .accessDeniedPage("/403");
+                .permitAll();
     }
 
 }
