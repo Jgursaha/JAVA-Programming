@@ -23,14 +23,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31cc9a93-8d3e-4ade-9538-a01323215b3e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/starter/cloudstorage/src/main/java/com/udacity/jwdnd/course1/cloudstorage/mapper/FileMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/starter/cloudstorage/src/main/java/com/udacity/jwdnd/course1/cloudstorage/model/File.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/starter/cloudstorage/src/main/java/com/udacity/jwdnd/course1/cloudstorage/services/FileStorageService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/starter/cloudstorage/src/main/java/com/udacity/jwdnd/course1/cloudstorage/mapper/NoteMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/starter/cloudstorage/src/main/java/com/udacity/jwdnd/course1/cloudstorage/model/Note.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/starter/cloudstorage/src/main/java/com/udacity/jwdnd/course1/cloudstorage/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/starter/cloudstorage/src/main/java/com/udacity/jwdnd/course1/cloudstorage/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/starter/cloudstorage/src/main/java/com/udacity/jwdnd/course1/cloudstorage/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/starter/cloudstorage/src/main/java/com/udacity/jwdnd/course1/cloudstorage/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/starter/cloudstorage/src/main/java/com/udacity/jwdnd/course1/cloudstorage/mapper/FileMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/starter/cloudstorage/src/main/java/com/udacity/jwdnd/course1/cloudstorage/mapper/FileMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/starter/cloudstorage/src/main/java/com/udacity/jwdnd/course1/cloudstorage/services/FileStorageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/starter/cloudstorage/src/main/java/com/udacity/jwdnd/course1/cloudstorage/services/FileStorageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/starter/cloudstorage/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/starter/cloudstorage/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/starter/cloudstorage/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/starter/cloudstorage/src/main/resources/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starter/cloudstorage/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/starter/cloudstorage/src/main/resources/templates/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/starter/cloudstorage/src/main/resources/templates/result.html" beforeDir="false" afterPath="$PROJECT_DIR$/starter/cloudstorage/src/main/resources/templates/result.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../review/src/main/java/com/udacity/jwdnd/c1/review/Config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../review/src/main/java/com/udacity/jwdnd/c1/review/Config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../review/src/main/java/com/udacity/jwdnd/c1/review/Mapper/MessageMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../review/src/main/java/com/udacity/jwdnd/c1/review/Mapper/MessageMapper.java" afterDir="false" />
@@ -137,27 +138,32 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="427" y="-821" key="#com.intellij.ide.util.MemberChooser" timestamp="1598868196690">
+    <state x="427" y="-821" key="#com.intellij.ide.util.MemberChooser" timestamp="1598995405346">
       <screen x="-346" y="-1057" width="1920" height="1057" />
     </state>
-    <state x="427" y="-821" key="#com.intellij.ide.util.MemberChooser/0.23.1280.777/-346.-1057.1920.1057@-346.-1057.1920.1057" timestamp="1598868196690" />
-    <state width="1878" height="290" key="GridCell.Tab.0.bottom" timestamp="1598871707347">
+    <state x="427" y="-821" key="#com.intellij.ide.util.MemberChooser/0.23.1280.777/-346.-1057.1920.1057@-346.-1057.1920.1057" timestamp="1598995405346" />
+    <state width="1878" height="290" key="GridCell.Tab.0.bottom" timestamp="1598998328591">
       <screen x="-346" y="-1057" width="1920" height="1057" />
     </state>
-    <state width="1878" height="290" key="GridCell.Tab.0.bottom/0.23.1280.777/-346.-1057.1920.1057@-346.-1057.1920.1057" timestamp="1598871707347" />
-    <state width="1878" height="290" key="GridCell.Tab.0.center" timestamp="1598871707345">
+    <state width="1878" height="290" key="GridCell.Tab.0.bottom/0.23.1280.777/-346.-1057.1920.1057@-346.-1057.1920.1057" timestamp="1598998328591" />
+    <state width="1878" height="290" key="GridCell.Tab.0.center" timestamp="1598998328587">
       <screen x="-346" y="-1057" width="1920" height="1057" />
     </state>
-    <state width="1878" height="290" key="GridCell.Tab.0.center/0.23.1280.777/-346.-1057.1920.1057@-346.-1057.1920.1057" timestamp="1598871707345" />
-    <state width="1878" height="290" key="GridCell.Tab.0.left" timestamp="1598871707343">
+    <state width="1878" height="290" key="GridCell.Tab.0.center/0.23.1280.777/-346.-1057.1920.1057@-346.-1057.1920.1057" timestamp="1598998328587" />
+    <state width="1878" height="290" key="GridCell.Tab.0.left" timestamp="1598998328586">
       <screen x="-346" y="-1057" width="1920" height="1057" />
     </state>
-    <state width="1878" height="290" key="GridCell.Tab.0.left/0.23.1280.777/-346.-1057.1920.1057@-346.-1057.1920.1057" timestamp="1598871707343" />
-    <state width="1878" height="290" key="GridCell.Tab.0.right" timestamp="1598871707346">
+    <state width="1878" height="290" key="GridCell.Tab.0.left/0.23.1280.777/-346.-1057.1920.1057@-346.-1057.1920.1057" timestamp="1598998328586" />
+    <state width="1878" height="290" key="GridCell.Tab.0.right" timestamp="1598998328590">
       <screen x="-346" y="-1057" width="1920" height="1057" />
     </state>
-    <state width="1878" height="290" key="GridCell.Tab.0.right/0.23.1280.777/-346.-1057.1920.1057@-346.-1057.1920.1057" timestamp="1598871707346" />
+    <state width="1878" height="290" key="GridCell.Tab.0.right/0.23.1280.777/-346.-1057.1920.1057@-346.-1057.1920.1057" timestamp="1598998328590" />
+    <state x="415" y="-608" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1598998380482">
+      <screen x="-346" y="-1057" width="1920" height="1057" />
+    </state>
+    <state x="415" y="-608" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1280.777/-346.-1057.1920.1057@-346.-1057.1920.1057" timestamp="1598998380482" />
   </component>
 </project>

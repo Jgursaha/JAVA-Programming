@@ -10,15 +10,38 @@
     </head>
     <body class="p-3 mb-2 bg-light text-black">
         <div class="container justify-content-center w-50 p-3" style="margin-top: 5em;">
-            <div th:if="${param.file}" class="alert alert-success fill-parent">
+            <!-- Successful File Upload -->
+            <div th:if="${fileUploadSuccess}" class="alert alert-success fill-parent">
                 <h1 class="display-5">Success</h1>
                 <span>Your changes were successfully saved. Click <a th:href="@{/home}">here</a> to continue.</span>
             </div>
 
-            <div th:if="${param.error}"class="alert alert-danger fill-parent">
+            <!-- Attempt to upload duplicate file -->
+            <div th:if="${fileDuplicateError}"class="alert alert-danger fill-parent">
                 <h1 class="display-5">Error</h1>
-                <span>Your changes were not saved. Click <a>here</a> to continue.</span>
+                <span>A file with the same name already exists. Upload unsuccessful. Click <a th:href="@{/home}">here</a> to continue.</span>
             </div>
+
+            <!-- Unsuccessful File Upload -->
+            <div th:if="${fileUploadError}"class="alert alert-danger fill-parent">
+                <h1 class="display-5">Error</h1>
+                <span>The file could not be uploaded. Click <a th:href="@{/home}">here</a> to continue.</span>
+            </div>
+
+            <!-- Successful File Delete -->
+            <div th:if="${fileDeleteSuccess}" class="alert alert-success fill-parent">
+                <h1 class="display-5">Success</h1>
+                <span>The file was successfully deleted. Click <a th:href="@{/home}">here</a> to continue.</span>
+            </div>
+
+            <!-- Unsuccessful File Delete -->
+            <div th:if="${fileDeleteError}"class="alert alert-danger fill-parent">
+                <h1 class="display-5">Error</h1>
+                <span>The file could not be deleted. Click <a th:href="@{/home}">here</a> to continue.</span>
+            </div>
+
+
+
 
             <div class="alert alert-danger fill-parent">
                 <h1 class="display-5">Error</h1>
