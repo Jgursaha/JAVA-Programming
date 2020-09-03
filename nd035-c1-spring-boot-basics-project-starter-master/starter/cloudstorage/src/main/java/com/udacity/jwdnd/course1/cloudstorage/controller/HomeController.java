@@ -1,11 +1,10 @@
 package com.udacity.jwdnd.course1.cloudstorage.controller;
 
+import com.udacity.jwdnd.course1.cloudstorage.model.Credential;
 import com.udacity.jwdnd.course1.cloudstorage.model.File;
 import com.udacity.jwdnd.course1.cloudstorage.model.Note;
 import com.udacity.jwdnd.course1.cloudstorage.model.User;
-import com.udacity.jwdnd.course1.cloudstorage.services.AuthenticationService;
-import com.udacity.jwdnd.course1.cloudstorage.services.FileStorageService;
-import com.udacity.jwdnd.course1.cloudstorage.services.UserService;
+import com.udacity.jwdnd.course1.cloudstorage.services.*;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -26,20 +25,36 @@ public class HomeController {
 
     private FileStorageService fileStorageService;
     private UserService userService;
+    private NoteService noteService;
+    private CredentialService credentialService;
+    private EncryptionService encryptionService;
 
-    public HomeController(FileStorageService fileStorageService, UserService userService) {
+    public HomeController(FileStorageService fileStorageService, UserService userService, NoteService noteService, CredentialService credentialService, EncryptionService encryptionService) {
         this.fileStorageService = fileStorageService;
         this.userService = userService;
+        this.noteService = noteService;
+        this.credentialService = credentialService;
+        this.encryptionService = encryptionService;
     }
 
-
     @RequestMapping("/home")
-    public String getHomePage(Authentication authentication, Model model){
+    @GetMapping
+    public String getHomePage(@ModelAttribute("currentNote") Note currentNote, @ModelAttribute("currentCredential") Credential currentCredential, Authentication authentication, Model model){
         String userName = authentication.getName();
         User user = userService.getUser(userName);
         Integer userid = user.getUserId();
         List<File> fileList = fileStorageService.getFilesByUser(userid);
+        List<Note> noteList = noteService.getNotesByUser(userid);
+        List<Credential> credentialList = credentialService.getCredentialsByUser(userid);
+
+        if(credentialList.size() > 0){
+            System.out.println("first credential username is: "+credentialList.get(0).getUsername());
+        }
         model.addAttribute("fileList", fileList);
+        model.addAttribute("noteList", noteList);
+        model.addAttribute("credentialList", credentialList);
+        model.addAttribute("encryptionService", encryptionService);
+
         return "home";
     }
 
@@ -100,7 +115,6 @@ public class HomeController {
     @GetMapping("/file/delete/{fileId}")
     public String deleteFile(@PathVariable Integer fileId, Authentication auth, Model model){
         System.out.println("User wants to delete file with id" + fileId);
-
         Integer deleteResult = fileStorageService.deleteFileByID(fileId);
 
         if (deleteResult ==1){
@@ -114,8 +128,102 @@ public class HomeController {
     }
 
     @PostMapping("/addNote")
-    public String addNote(@ModelAttribute("currentNote") Note currentNote, Authentication auth){
-        System.out.println("In add Note function, user wants to add note");
-        return "home";
+    public String addNote(@ModelAttribute("currentNote") Note currentNote, Authentication auth, Model model){
+        if(currentNote.getNoteId() == null){
+            System.out.println("In add Note function, user wants to add note");
+            String userName = auth.getName();
+            Integer userid =  userService.getUser(userName).getUserId();
+            currentNote.setUserId(userid);
+            int insertResult = noteService.insertNote(currentNote);
+
+            if (insertResult ==1){
+                model.addAttribute("noteCreationSuccess", true);
+            }
+            else{
+                model.addAttribute("noteCreationError", true);
+            }
+        }
+        else{
+            System.out.println("In add Note function, user wants to update note");
+            System.out.println("User sent the note title: " + currentNote.getNoteTitle());
+            System.out.println("User sent the note description : " + currentNote.getNoteDescription());
+            System.out.println("User sent the note id: " + currentNote.getNoteId());
+
+            int updateResult = noteService.updateNote(currentNote);
+
+            //System.out.println("Insertion of note has returned: "+insertResult);
+            if (updateResult ==1){
+                model.addAttribute("noteUpdateSuccess", true);
+            }
+            else{
+                model.addAttribute("noteUpdateError", true);
+            }
+        }
+        return "result.html";
+    }
+
+    @GetMapping("/note/delete/{noteId}")
+    public String deleteNote(@PathVariable Integer noteId, Authentication auth, Model model){
+        System.out.println("User wants to delete note with id" + noteId);
+        Integer deleteResult = noteService.deleteNoteByID(noteId);
+
+        if (deleteResult ==1){
+            model.addAttribute("noteDeletionSuccess", true);
+        }
+        else{
+            model.addAttribute("noteDeletionError", false);
+        }
+
+        return "result.html";
+    }
+
+    @PostMapping("/addCredential")
+    public String addCredential(@ModelAttribute("currentCredential") Credential currentCredential, Authentication auth, Model model){
+        if(currentCredential.getCredentialId() == null){
+            System.out.println("In add Credential function, user wants to add credential");
+            String userName = auth.getName();
+            Integer userid =  userService.getUser(userName).getUserId();
+            currentCredential.setUserId(userid);
+            int insertResult = credentialService.insertCredential(currentCredential);
+
+            if (insertResult ==1){
+                model.addAttribute("credentialCreationSuccess", true);
+            }
+            else{
+                model.addAttribute("credentialCreationError", true);
+            }
+        }
+        else{
+            System.out.println("In add Credential function, user wants to update note");
+            System.out.println("User sent the credential url: " + currentCredential.getUrl());
+            System.out.println("User sent the credential Username : " + currentCredential.getUsername());
+            System.out.println("User sent the credential id: " + currentCredential.getCredentialId());
+
+            int updateResult = credentialService.updateCredential(currentCredential);
+
+            //System.out.println("Insertion of note has returned: "+insertResult);
+            if (updateResult ==1){
+                model.addAttribute("credentialUpdateSuccess", true);
+            }
+            else{
+                model.addAttribute("credentialUpdateError", true);
+            }
+        }
+        return "result.html";
+    }
+
+    @GetMapping("/credential/delete/{credentialId}")
+    public String deleteCredential(@PathVariable Integer credentialId, Authentication auth, Model model){
+        System.out.println("User wants to delete credential with id" + credentialId);
+        Integer deleteResult = credentialService.deleteCredentialByID(credentialId);
+
+        if (deleteResult ==1){
+            model.addAttribute("credentialDeletionSuccess", true);
+        }
+        else{
+            model.addAttribute("credentialDeletionError", false);
+        }
+
+        return "result.html";
     }
 }

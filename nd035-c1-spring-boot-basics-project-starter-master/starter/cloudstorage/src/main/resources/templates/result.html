@@ -40,14 +40,80 @@
                 <span>The file could not be deleted. Click <a th:href="@{/home}">here</a> to continue.</span>
             </div>
 
-
-
-
-            <div class="alert alert-danger fill-parent">
-                <h1 class="display-5">Error</h1>
-                <span>Example Error Message</span>
-                <span>Click <a>here</a> to continue.</span>
+            <!-- Successful Note Creation -->
+            <div th:if="${noteCreationSuccess}" class="alert alert-success fill-parent">
+                <h1 class="display-5">Success</h1>
+                <span>The note was successfully created. Click <a th:href="@{/home}">here</a> to continue.</span>
             </div>
+
+            <!-- Unsuccessful Note Creation -->
+            <div th:if="${noteCreationError}"class="alert alert-danger fill-parent">
+                <h1 class="display-5">Error</h1>
+                <span>The note could not be created. Click <a th:href="@{/home}">here</a> to continue.</span>
+            </div>
+
+            <!-- Successful Note Deletion -->
+            <div th:if="${noteDeletionSuccess}" class="alert alert-success fill-parent">
+                <h1 class="display-5">Success</h1>
+                <span>The note was successfully deleted. Click <a th:href="@{/home}">here</a> to continue.</span>
+            </div>
+
+            <!-- Unsuccessful Note Deletion -->
+            <div th:if="${noteDeletionError}"class="alert alert-danger fill-parent">
+                <h1 class="display-5">Error</h1>
+                <span>The note could not be deleted. Click <a th:href="@{/home}">here</a> to continue.</span>
+            </div>
+
+            <!-- Successful Note Update -->
+            <div th:if="${noteUpdateSuccess}" class="alert alert-success fill-parent">
+                <h1 class="display-5">Success</h1>
+                <span>The note was successfully updated. Click <a th:href="@{/home}">here</a> to continue.</span>
+            </div>
+
+            <!-- Unsuccessful Note Update -->
+            <div th:if="${noteUpdateError}"class="alert alert-danger fill-parent">
+                <h1 class="display-5">Error</h1>
+                <span>The note could not be updated. Click <a th:href="@{/home}">here</a> to continue.</span>
+            </div>
+
+            <!-- Successful Credential Creation -->
+            <div th:if="${credentialCreationSuccess}" class="alert alert-success fill-parent">
+                <h1 class="display-5">Success</h1>
+                <span>The credential was successfully created. Click <a th:href="@{/home}">here</a> to continue.</span>
+            </div>
+
+            <!-- Unsuccessful Credential Creation -->
+            <div th:if="${credentialCreationError}"class="alert alert-danger fill-parent">
+                <h1 class="display-5">Error</h1>
+                <span>The credential could not be created. Click <a th:href="@{/home}">here</a> to continue.</span>
+            </div>
+
+            <!-- Successful Credential Deletion -->
+            <div th:if="${credentialDeletionSuccess}" class="alert alert-success fill-parent">
+                <h1 class="display-5">Success</h1>
+                <span>The credential was successfully deleted. Click <a th:href="@{/home}">here</a> to continue.</span>
+            </div>
+
+            <!-- Unsuccessful Credential Deletion -->
+            <div th:if="${credentialDeletionError}"class="alert alert-danger fill-parent">
+                <h1 class="display-5">Error</h1>
+                <span>The credential could not be deleted. Click <a th:href="@{/home}">here</a> to continue.</span>
+            </div>
+
+            <!-- Successful Credential Update -->
+            <div th:if="${credentialUpdateSuccess}" class="alert alert-success fill-parent">
+                <h1 class="display-5">Success</h1>
+                <span>The credential was successfully updated. Click <a th:href="@{/home}">here</a> to continue.</span>
+            </div>
+
+            <!-- Unsuccessful Credential Update -->
+            <div th:if="${credentialUpdateError}"class="alert alert-danger fill-parent">
+                <h1 class="display-5">Error</h1>
+                <span>The credential could not be updated. Click <a th:href="@{/home}">here</a> to continue.</span>
+            </div>
+
+
+
         </div>
     </body>
 </html>
