@@ -6,17 +6,17 @@ public class Credential {
     private String username;
     private String password;
     private Integer userId;
-    private byte[] key;
+    private String key;
 
     public Integer getCredentialId() {
         return credentialId;
     }
 
-    public byte[] getKey() {
+    public String getKey() {
         return key;
     }
 
-    public void setKey(byte[] key) {
+    public void setKey(String key) {
         this.key = key;
     }
 

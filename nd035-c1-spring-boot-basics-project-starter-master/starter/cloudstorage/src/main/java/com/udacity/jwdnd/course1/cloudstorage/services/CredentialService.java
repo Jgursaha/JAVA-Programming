@@ -33,7 +33,7 @@ public class CredentialService {
         String encryptedPassword = encryptionService.encryptValue(password, encodedKey);
 
         credential.setPassword(encryptedPassword);
-        credential.setKey(key);
+        credential.setKey(encodedKey);
 
         return credentialMapper.insertCredential(credential);
     }

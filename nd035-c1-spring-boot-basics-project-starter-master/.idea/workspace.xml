@@ -22,16 +22,19 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31cc9a93-8d3e-4ade-9538-a01323215b3e" name="Default Changelist" comment="Introducing notes functionality">
-      <change afterPath="$PROJECT_DIR$/starter/cloudstorage/src/main/java/com/udacity/jwdnd/course1/cloudstorage/mapper/CredentialMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/starter/cloudstorage/src/main/java/com/udacity/jwdnd/course1/cloudstorage/model/Credential.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/starter/cloudstorage/src/main/java/com/udacity/jwdnd/course1/cloudstorage/services/CredentialService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/starter/cloudstorage/src/main/java/com/udacity/jwdnd/course1/cloudstorage/services/NoteService.java" afterDir="false" />
+    <list default="true" id="31cc9a93-8d3e-4ade-9538-a01323215b3e" name="Default Changelist" comment="Password decryption issue">
+      <change afterPath="$PROJECT_DIR$/starter/cloudstorage/src/test/java/com/udacity/jwdnd/course1/cloudstorage/HomePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/starter/cloudstorage/src/test/java/com/udacity/jwdnd/course1/cloudstorage/LoginPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/starter/cloudstorage/src/test/java/com/udacity/jwdnd/course1/cloudstorage/ResultPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/starter/cloudstorage/src/test/java/com/udacity/jwdnd/course1/cloudstorage/SignUpPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starter/cloudstorage/src/main/java/com/udacity/jwdnd/course1/cloudstorage/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/starter/cloudstorage/src/main/java/com/udacity/jwdnd/course1/cloudstorage/controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starter/cloudstorage/src/main/java/com/udacity/jwdnd/course1/cloudstorage/mapper/NoteMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/starter/cloudstorage/src/main/java/com/udacity/jwdnd/course1/cloudstorage/mapper/NoteMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/starter/cloudstorage/src/main/java/com/udacity/jwdnd/course1/cloudstorage/mapper/CredentialMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/starter/cloudstorage/src/main/java/com/udacity/jwdnd/course1/cloudstorage/mapper/CredentialMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/starter/cloudstorage/src/main/java/com/udacity/jwdnd/course1/cloudstorage/model/Credential.java" beforeDir="false" afterPath="$PROJECT_DIR$/starter/cloudstorage/src/main/java/com/udacity/jwdnd/course1/cloudstorage/model/Credential.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/starter/cloudstorage/src/main/java/com/udacity/jwdnd/course1/cloudstorage/services/CredentialService.java" beforeDir="false" afterPath="$PROJECT_DIR$/starter/cloudstorage/src/main/java/com/udacity/jwdnd/course1/cloudstorage/services/CredentialService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/starter/cloudstorage/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/starter/cloudstorage/src/main/resources/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starter/cloudstorage/src/main/resources/templates/result.html" beforeDir="false" afterPath="$PROJECT_DIR$/starter/cloudstorage/src/main/resources/templates/result.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/starter/cloudstorage/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/starter/cloudstorage/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/starter/cloudstorage/src/main/resources/templates/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/starter/cloudstorage/src/main/resources/templates/signup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/starter/cloudstorage/src/test/java/com/udacity/jwdnd/course1/cloudstorage/CloudStorageApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/starter/cloudstorage/src/test/java/com/udacity/jwdnd/course1/cloudstorage/CloudStorageApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,6 +82,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.udacity.jwdnd.course1.cloudstorage" />
       <recent name="com.udacity.jwdnd.course1.cloudstorage.services" />
       <recent name="com.udacity.jwdnd.course1.cloudstorage.mapper" />
       <recent name="com.udacity.jwdnd.course1.cloudstorage.model" />
@@ -87,7 +91,7 @@
       <recent name="$PROJECT_DIR$/starter/cloudstorage/src/main/resources/templates" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.CloudStorageApplicationTests.testNoteCreation">
     <configuration name="CloudStorageApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.udacity.jwdnd.course1.cloudstorage.CloudStorageApplication" />
       <module name="cloudstorage" />
@@ -101,9 +105,76 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CloudStorageApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="cloudstorage" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.udacity.jwdnd.course1.cloudstorage.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.udacity.jwdnd.course1.cloudstorage" />
+      <option name="MAIN_CLASS_NAME" value="com.udacity.jwdnd.course1.cloudstorage.CloudStorageApplicationTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CloudStorageApplicationTests.testNoteCreation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="cloudstorage" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.udacity.jwdnd.course1.cloudstorage.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.udacity.jwdnd.course1.cloudstorage" />
+      <option name="MAIN_CLASS_NAME" value="com.udacity.jwdnd.course1.cloudstorage.CloudStorageApplicationTests" />
+      <option name="METHOD_NAME" value="testNoteCreation" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CloudStorageApplicationTests.testSignupLogin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="cloudstorage" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.udacity.jwdnd.course1.cloudstorage.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.udacity.jwdnd.course1.cloudstorage" />
+      <option name="MAIN_CLASS_NAME" value="com.udacity.jwdnd.course1.cloudstorage.CloudStorageApplicationTests" />
+      <option name="METHOD_NAME" value="testSignupLogin" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CloudStorageApplicationTests.unauthorisedUserAccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="cloudstorage" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.udacity.jwdnd.course1.cloudstorage.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.udacity.jwdnd.course1.cloudstorage" />
+      <option name="MAIN_CLASS_NAME" value="com.udacity.jwdnd.course1.cloudstorage.CloudStorageApplicationTests" />
+      <option name="METHOD_NAME" value="unauthorisedUserAccess" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CloudStorageApplicationTests.testNoteCreation" />
         <item itemvalue="Application.CloudStorageApplication" />
+        <item itemvalue="JUnit.CloudStorageApplicationTests.testSignupLogin" />
+        <item itemvalue="JUnit.CloudStorageApplicationTests.unauthorisedUserAccess" />
+        <item itemvalue="JUnit.CloudStorageApplicationTests" />
       </list>
     </recent_temporary>
   </component>
@@ -123,7 +194,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598998413865</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Password decryption issue">
+      <created>1599128622599</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1599128622599</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -140,7 +218,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Introducing notes functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="Introducing notes functionality" />
+    <MESSAGE value="Password decryption issue" />
+    <option name="LAST_COMMIT_MESSAGE" value="Password decryption issue" />
   </component>
   <component name="WindowStateProjectService">
     <state x="427" y="-821" key="#com.intellij.ide.util.MemberChooser" timestamp="1599127779208">
@@ -148,30 +227,30 @@
     </state>
     <state x="427" y="-839" key="#com.intellij.ide.util.MemberChooser/0.0.1280.800/-346.-1080.1920.1080@-346.-1080.1920.1080" timestamp="1599017686258" />
     <state x="427" y="-821" key="#com.intellij.ide.util.MemberChooser/0.23.1280.777/-346.-1057.1920.1057@-346.-1057.1920.1057" timestamp="1599127779208" />
-    <state width="1878" height="311" key="GridCell.Tab.0.bottom" timestamp="1599128268497">
+    <state width="1878" height="250" key="GridCell.Tab.0.bottom" timestamp="1599429528060">
       <screen x="-346" y="-1057" width="1920" height="1057" />
     </state>
     <state width="1878" height="327" key="GridCell.Tab.0.bottom/0.0.1280.800/-346.-1080.1920.1080@-346.-1080.1920.1080" timestamp="1599017782324" />
-    <state width="1878" height="311" key="GridCell.Tab.0.bottom/0.23.1280.777/-346.-1057.1920.1057@-346.-1057.1920.1057" timestamp="1599128268497" />
-    <state width="1878" height="311" key="GridCell.Tab.0.center" timestamp="1599128268492">
+    <state width="1878" height="250" key="GridCell.Tab.0.bottom/0.23.1280.777/-346.-1057.1920.1057@-346.-1057.1920.1057" timestamp="1599429528060" />
+    <state width="1878" height="250" key="GridCell.Tab.0.center" timestamp="1599429528058">
       <screen x="-346" y="-1057" width="1920" height="1057" />
     </state>
     <state width="1878" height="327" key="GridCell.Tab.0.center/0.0.1280.800/-346.-1080.1920.1080@-346.-1080.1920.1080" timestamp="1599017782322" />
-    <state width="1878" height="311" key="GridCell.Tab.0.center/0.23.1280.777/-346.-1057.1920.1057@-346.-1057.1920.1057" timestamp="1599128268492" />
-    <state width="1878" height="311" key="GridCell.Tab.0.left" timestamp="1599128268490">
+    <state width="1878" height="250" key="GridCell.Tab.0.center/0.23.1280.777/-346.-1057.1920.1057@-346.-1057.1920.1057" timestamp="1599429528058" />
+    <state width="1878" height="250" key="GridCell.Tab.0.left" timestamp="1599429528057">
       <screen x="-346" y="-1057" width="1920" height="1057" />
     </state>
     <state width="1878" height="327" key="GridCell.Tab.0.left/0.0.1280.800/-346.-1080.1920.1080@-346.-1080.1920.1080" timestamp="1599017782320" />
-    <state width="1878" height="311" key="GridCell.Tab.0.left/0.23.1280.777/-346.-1057.1920.1057@-346.-1057.1920.1057" timestamp="1599128268490" />
-    <state width="1878" height="311" key="GridCell.Tab.0.right" timestamp="1599128268494">
+    <state width="1878" height="250" key="GridCell.Tab.0.left/0.23.1280.777/-346.-1057.1920.1057@-346.-1057.1920.1057" timestamp="1599429528057" />
+    <state width="1878" height="250" key="GridCell.Tab.0.right" timestamp="1599429528059">
       <screen x="-346" y="-1057" width="1920" height="1057" />
     </state>
     <state width="1878" height="327" key="GridCell.Tab.0.right/0.0.1280.800/-346.-1080.1920.1080@-346.-1080.1920.1080" timestamp="1599017782323" />
-    <state width="1878" height="311" key="GridCell.Tab.0.right/0.23.1280.777/-346.-1057.1920.1057@-346.-1057.1920.1057" timestamp="1599128268493" />
-    <state x="214" y="-789" key="Vcs.Push.Dialog.v2" timestamp="1598998786503">
+    <state width="1878" height="250" key="GridCell.Tab.0.right/0.23.1280.777/-346.-1057.1920.1057@-346.-1057.1920.1057" timestamp="1599429528059" />
+    <state x="214" y="-789" key="Vcs.Push.Dialog.v2" timestamp="1599128637801">
       <screen x="-346" y="-1057" width="1920" height="1057" />
     </state>
-    <state x="214" y="-789" key="Vcs.Push.Dialog.v2/0.23.1280.777/-346.-1057.1920.1057@-346.-1057.1920.1057" timestamp="1598998786503" />
+    <state x="214" y="-789" key="Vcs.Push.Dialog.v2/0.23.1280.777/-346.-1057.1920.1057@-346.-1057.1920.1057" timestamp="1599128637801" />
     <state x="415" y="-608" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1598998380482">
       <screen x="-346" y="-1057" width="1920" height="1057" />
     </state>
