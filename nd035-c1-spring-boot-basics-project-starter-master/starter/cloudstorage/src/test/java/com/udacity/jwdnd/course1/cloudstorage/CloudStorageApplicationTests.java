@@ -16,7 +16,7 @@ class CloudStorageApplicationTests {
 
 	private String fName = "Jitesh";
 	private String lName = "Gursahani";
-	private String  uName = "jgursaha";
+	private String uName = "jgursaha";
 	private String passWord = "latajj6";
 
 	@LocalServerPort
@@ -33,7 +33,7 @@ class CloudStorageApplicationTests {
 	@BeforeEach
 	public void beforeEach() {
 		this.driver = new ChromeDriver();
-		driver.get(baseURL="http://localhost:"+ port);
+		driver.get(baseURL = "http://localhost:" + port);
 	}
 
 	@AfterEach
@@ -45,7 +45,7 @@ class CloudStorageApplicationTests {
 
 
 	@Test
-	public void unauthorisedUserAccess(){
+	public void unauthorisedUserAccess() {
 
 		//test login page is accessible by unauthorised user
 		driver.get("http://localhost:" + this.port + "/login");
@@ -74,7 +74,7 @@ class CloudStorageApplicationTests {
 
 
 	@Test
-	public void testSignupLogin(){
+	public void testSignupLogin() {
 
 		//SignUp
 		driver.get(baseURL + "/signup");
@@ -100,8 +100,11 @@ class CloudStorageApplicationTests {
 	}
 
 	@Test
-	public void testNoteCreation(){
+	public void testNoteCreation() {
+		String[] results;
 		System.out.println("testing note creation");
+		String noteTitle = "Test Title";
+		String noteDescription = "Test description.";
 
 		//SignUp
 		driver.get(baseURL + "/signup");
@@ -114,22 +117,97 @@ class CloudStorageApplicationTests {
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.login(uName, passWord);
 
+		//create new note
+		HomePage homePage = new HomePage(driver);
+		homePage.createNote(driver, noteTitle, noteDescription);
+
+		//navigate to home page
+		driver.get(baseURL + "/home");
+
+		//check values displayed for the new note
+		results = homePage.retrieveNote(driver);
+
+		assertEquals(noteTitle, results[0]);
+		assertEquals(noteDescription, results[1]);
+
+	}
+
+	@Test
+	public void testNoteEdit() {
+		String[] results;
+		System.out.println("testing note creation");
 		String noteTitle = "Test Title";
 		String noteDescription = "Test description.";
+		String editedNoteTitle = "Edit Test Title";
+		String editedNoteDescription = "Edit Test description.";
 
+		//SignUp
+		driver.get(baseURL + "/signup");
+		SignUpPage signUpPage = new SignUpPage(driver);
+		signUpPage.signUp(fName, lName, uName, passWord);
+
+		//Login
+		System.out.println("LOGGING IN");
+		driver.get(baseURL + "/login");
+		LoginPage loginPage = new LoginPage(driver);
+		loginPage.login(uName, passWord);
 
 		//create new note
 		HomePage homePage = new HomePage(driver);
 		homePage.createNote(driver, noteTitle, noteDescription);
 
+		//navigate to home page
+		driver.get(baseURL + "/home");
 
-		//click navigation link back to home on result page
+		//edit the newly created note
+		homePage.editNote(driver, editedNoteTitle, editedNoteDescription);
 
-		//navigate to notes tab
+		//navigate to home page
+		driver.get(baseURL + "/home");
 
 		//check values displayed for the new note
+		results = homePage.retrieveNote(driver);
 
+		assertEquals(editedNoteTitle, results[0]);
+		assertEquals(editedNoteDescription, results[1]);
+	}
 
+	@Test
+	public void testNoteDelete() {
+		String[] results;
+		boolean result;
+		System.out.println("testing note creation");
+		String noteTitle = "Test Title";
+		String noteDescription = "Test description.";
+
+		//SignUp
+		driver.get(baseURL + "/signup");
+		SignUpPage signUpPage = new SignUpPage(driver);
+		signUpPage.signUp(fName, lName, uName, passWord);
+
+		//Login
+		System.out.println("LOGGING IN");
+		driver.get(baseURL + "/login");
+		LoginPage loginPage = new LoginPage(driver);
+		loginPage.login(uName, passWord);
+
+		//create new note
+		HomePage homePage = new HomePage(driver);
+		homePage.createNote(driver, noteTitle, noteDescription);
+
+		//navigate to home page
+		driver.get(baseURL + "/home");
+
+		//delete the newly created note
+		homePage.deleteNote(driver);
+
+		//navigate to home page
+		driver.get(baseURL + "/home");
+
+		//check values displayed for the new note
+		result = homePage.doesNoteExist(driver);
+
+		assertEquals(false, result);
 
 	}
 }

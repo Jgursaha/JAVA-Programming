@@ -23,18 +23,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31cc9a93-8d3e-4ade-9538-a01323215b3e" name="Default Changelist" comment="Password decryption issue">
-      <change afterPath="$PROJECT_DIR$/starter/cloudstorage/src/test/java/com/udacity/jwdnd/course1/cloudstorage/HomePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/starter/cloudstorage/src/test/java/com/udacity/jwdnd/course1/cloudstorage/LoginPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/starter/cloudstorage/src/test/java/com/udacity/jwdnd/course1/cloudstorage/ResultPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/starter/cloudstorage/src/test/java/com/udacity/jwdnd/course1/cloudstorage/SignUpPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starter/cloudstorage/src/main/java/com/udacity/jwdnd/course1/cloudstorage/mapper/CredentialMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/starter/cloudstorage/src/main/java/com/udacity/jwdnd/course1/cloudstorage/mapper/CredentialMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starter/cloudstorage/src/main/java/com/udacity/jwdnd/course1/cloudstorage/model/Credential.java" beforeDir="false" afterPath="$PROJECT_DIR$/starter/cloudstorage/src/main/java/com/udacity/jwdnd/course1/cloudstorage/model/Credential.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starter/cloudstorage/src/main/java/com/udacity/jwdnd/course1/cloudstorage/services/CredentialService.java" beforeDir="false" afterPath="$PROJECT_DIR$/starter/cloudstorage/src/main/java/com/udacity/jwdnd/course1/cloudstorage/services/CredentialService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/starter/cloudstorage/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/starter/cloudstorage/src/main/resources/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starter/cloudstorage/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/starter/cloudstorage/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starter/cloudstorage/src/main/resources/templates/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/starter/cloudstorage/src/main/resources/templates/signup.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/starter/cloudstorage/src/test/java/com/udacity/jwdnd/course1/cloudstorage/CloudStorageApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/starter/cloudstorage/src/test/java/com/udacity/jwdnd/course1/cloudstorage/CloudStorageApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/starter/cloudstorage/src/test/java/com/udacity/jwdnd/course1/cloudstorage/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/starter/cloudstorage/src/test/java/com/udacity/jwdnd/course1/cloudstorage/HomePage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +83,7 @@
       <recent name="$PROJECT_DIR$/starter/cloudstorage/src/main/resources/templates" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CloudStorageApplicationTests.testNoteCreation">
+  <component name="RunManager" selected="JUnit.CloudStorageApplicationTests.testNoteDelete">
     <configuration name="CloudStorageApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.udacity.jwdnd.course1.cloudstorage.CloudStorageApplication" />
       <module name="cloudstorage" />
@@ -136,7 +128,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CloudStorageApplicationTests.testSignupLogin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CloudStorageApplicationTests.testNoteDelete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="cloudstorage" />
       <extension name="coverage">
         <pattern>
@@ -146,13 +138,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.udacity.jwdnd.course1.cloudstorage" />
       <option name="MAIN_CLASS_NAME" value="com.udacity.jwdnd.course1.cloudstorage.CloudStorageApplicationTests" />
-      <option name="METHOD_NAME" value="testSignupLogin" />
+      <option name="METHOD_NAME" value="testNoteDelete" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CloudStorageApplicationTests.unauthorisedUserAccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CloudStorageApplicationTests.testNoteEdit" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="cloudstorage" />
       <extension name="coverage">
         <pattern>
@@ -162,7 +154,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.udacity.jwdnd.course1.cloudstorage" />
       <option name="MAIN_CLASS_NAME" value="com.udacity.jwdnd.course1.cloudstorage.CloudStorageApplicationTests" />
-      <option name="METHOD_NAME" value="unauthorisedUserAccess" />
+      <option name="METHOD_NAME" value="testNoteEdit" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -170,10 +162,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CloudStorageApplicationTests.testNoteCreation" />
         <item itemvalue="Application.CloudStorageApplication" />
-        <item itemvalue="JUnit.CloudStorageApplicationTests.testSignupLogin" />
-        <item itemvalue="JUnit.CloudStorageApplicationTests.unauthorisedUserAccess" />
+        <item itemvalue="JUnit.CloudStorageApplicationTests.testNoteDelete" />
+        <item itemvalue="JUnit.CloudStorageApplicationTests.testNoteEdit" />
+        <item itemvalue="JUnit.CloudStorageApplicationTests.testNoteCreation" />
         <item itemvalue="JUnit.CloudStorageApplicationTests" />
       </list>
     </recent_temporary>
@@ -227,26 +219,30 @@
     </state>
     <state x="427" y="-839" key="#com.intellij.ide.util.MemberChooser/0.0.1280.800/-346.-1080.1920.1080@-346.-1080.1920.1080" timestamp="1599017686258" />
     <state x="427" y="-821" key="#com.intellij.ide.util.MemberChooser/0.23.1280.777/-346.-1057.1920.1057@-346.-1057.1920.1057" timestamp="1599127779208" />
-    <state width="1878" height="250" key="GridCell.Tab.0.bottom" timestamp="1599429528060">
+    <state width="1878" height="250" key="GridCell.Tab.0.bottom" timestamp="1599515189373">
       <screen x="-346" y="-1057" width="1920" height="1057" />
     </state>
     <state width="1878" height="327" key="GridCell.Tab.0.bottom/0.0.1280.800/-346.-1080.1920.1080@-346.-1080.1920.1080" timestamp="1599017782324" />
-    <state width="1878" height="250" key="GridCell.Tab.0.bottom/0.23.1280.777/-346.-1057.1920.1057@-346.-1057.1920.1057" timestamp="1599429528060" />
-    <state width="1878" height="250" key="GridCell.Tab.0.center" timestamp="1599429528058">
+    <state width="1878" height="250" key="GridCell.Tab.0.bottom/0.23.1280.777/-346.-1057.1920.1057@-346.-1057.1920.1057" timestamp="1599515189373" />
+    <state width="1238" height="250" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1599453796338" />
+    <state width="1878" height="250" key="GridCell.Tab.0.center" timestamp="1599515189372">
       <screen x="-346" y="-1057" width="1920" height="1057" />
     </state>
     <state width="1878" height="327" key="GridCell.Tab.0.center/0.0.1280.800/-346.-1080.1920.1080@-346.-1080.1920.1080" timestamp="1599017782322" />
-    <state width="1878" height="250" key="GridCell.Tab.0.center/0.23.1280.777/-346.-1057.1920.1057@-346.-1057.1920.1057" timestamp="1599429528058" />
-    <state width="1878" height="250" key="GridCell.Tab.0.left" timestamp="1599429528057">
+    <state width="1878" height="250" key="GridCell.Tab.0.center/0.23.1280.777/-346.-1057.1920.1057@-346.-1057.1920.1057" timestamp="1599515189372" />
+    <state width="1238" height="250" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1599453796337" />
+    <state width="1878" height="250" key="GridCell.Tab.0.left" timestamp="1599515189370">
       <screen x="-346" y="-1057" width="1920" height="1057" />
     </state>
     <state width="1878" height="327" key="GridCell.Tab.0.left/0.0.1280.800/-346.-1080.1920.1080@-346.-1080.1920.1080" timestamp="1599017782320" />
-    <state width="1878" height="250" key="GridCell.Tab.0.left/0.23.1280.777/-346.-1057.1920.1057@-346.-1057.1920.1057" timestamp="1599429528057" />
-    <state width="1878" height="250" key="GridCell.Tab.0.right" timestamp="1599429528059">
+    <state width="1878" height="250" key="GridCell.Tab.0.left/0.23.1280.777/-346.-1057.1920.1057@-346.-1057.1920.1057" timestamp="1599515189370" />
+    <state width="1238" height="250" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1599453796337" />
+    <state width="1878" height="250" key="GridCell.Tab.0.right" timestamp="1599515189372">
       <screen x="-346" y="-1057" width="1920" height="1057" />
     </state>
     <state width="1878" height="327" key="GridCell.Tab.0.right/0.0.1280.800/-346.-1080.1920.1080@-346.-1080.1920.1080" timestamp="1599017782323" />
-    <state width="1878" height="250" key="GridCell.Tab.0.right/0.23.1280.777/-346.-1057.1920.1057@-346.-1057.1920.1057" timestamp="1599429528059" />
+    <state width="1878" height="250" key="GridCell.Tab.0.right/0.23.1280.777/-346.-1057.1920.1057@-346.-1057.1920.1057" timestamp="1599515189372" />
+    <state width="1238" height="250" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1599453796337" />
     <state x="214" y="-789" key="Vcs.Push.Dialog.v2" timestamp="1599128637801">
       <screen x="-346" y="-1057" width="1920" height="1057" />
     </state>
