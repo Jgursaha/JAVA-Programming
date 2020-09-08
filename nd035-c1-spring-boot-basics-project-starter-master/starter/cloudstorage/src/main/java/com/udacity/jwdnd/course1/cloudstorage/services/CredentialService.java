@@ -29,8 +29,7 @@ public class CredentialService {
         byte[] key = new byte[16];
 
         random.nextBytes(key);
-        //String encodedKey = Base64.getEncoder().encodeToString(key);
-        String encodedKey = encryptionService.getSecureKey();
+        String encodedKey = Base64.getEncoder().encodeToString(key);
         String encryptedPassword = encryptionService.encryptValue(password, encodedKey);
 
         credential.setPassword(encryptedPassword);
@@ -54,8 +53,7 @@ public class CredentialService {
         byte[] key = new byte[16];
 
         random.nextBytes(key);
-        //String encodedKey = Base64.getEncoder().encodeToString(key);
-        String encodedKey = encryptionService.getSecureKey();
+        String encodedKey = Base64.getEncoder().encodeToString(key);
         String encryptedPassword = encryptionService.encryptValue(password, encodedKey);
 
         credential.setPassword(encryptedPassword);

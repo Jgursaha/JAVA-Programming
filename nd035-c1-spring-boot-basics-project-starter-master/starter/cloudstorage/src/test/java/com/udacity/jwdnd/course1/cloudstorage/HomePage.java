@@ -80,6 +80,9 @@ public class HomePage {
     @FindBy(id = "saveCredentialChanges")
     private WebElement saveCredentialChanges;
 
+    @FindBy(id = "closeCredentialModal")
+    private WebElement closeCredentialModal;
+
     @FindBy(id = "newCredentialButton")
     private WebElement newCredentialButton;
 
@@ -146,7 +149,7 @@ public class HomePage {
     }
 
     public void deleteNote(WebDriver webDriver){
-        //click navigation link back to home on result page
+
         WebDriverWait wait = new WebDriverWait(webDriver, 20);
         wait.until(ExpectedConditions.elementToBeClickable(notesTab)).click();
         System.out.println("Clicked note tab - SUCCESS");
@@ -211,7 +214,23 @@ public class HomePage {
     }
 
     public String retrieveClearTextPassword(WebDriver webDriver){
-        return "password";
+        String clearPassword;
+
+        WebDriverWait wait = new WebDriverWait(webDriver, 20);
+        wait.until(ExpectedConditions.elementToBeClickable(credentialsTab)).click();
+        System.out.println("Clicked credentials tab - SUCCESS");
+
+        wait.until(ExpectedConditions.elementToBeClickable(editCredentialButton)).click();
+        System.out.println("Clicked edit credentials button - SUCCESS");
+
+        //wait.until(ExpectedConditions.elementToBeClickable(credentialPassword)).click();
+        clearPassword = wait.until(ExpectedConditions.elementToBeClickable(credentialPassword)).getAttribute("value");
+        System.out.println("got clear password - SUCCESS: " + clearPassword);
+
+        wait.until(ExpectedConditions.elementToBeClickable(closeCredentialModal)).click();
+        System.out.println("submitted new credential - SUCCESS");
+
+        return clearPassword;
     }
 
     public void editCredential(WebDriver webDriver, String url, String username, String password) {
@@ -219,10 +238,10 @@ public class HomePage {
 
         WebDriverWait wait = new WebDriverWait(webDriver, 20);
         wait.until(ExpectedConditions.elementToBeClickable(credentialsTab)).click();
-        System.out.println("Clicked note tab - SUCCESS");
+        System.out.println("Clicked credentials tab - SUCCESS");
 
         wait.until(ExpectedConditions.elementToBeClickable(editCredentialButton)).click();
-        System.out.println("Clicked edit note button - SUCCESS");
+        System.out.println("Clicked edit credentials button - SUCCESS");
 
         wait.until(ExpectedConditions.elementToBeClickable(credentialURL)).clear();
         wait.until(ExpectedConditions.elementToBeClickable(credentialURL)).sendKeys(url);
@@ -238,5 +257,25 @@ public class HomePage {
 
         wait.until(ExpectedConditions.elementToBeClickable(saveCredentialChanges)).click();
         System.out.println("submitted new credential - SUCCESS");
+    }
+
+    public void deleteCredential(WebDriver webDriver){
+
+        WebDriverWait wait = new WebDriverWait(webDriver, 20);
+        wait.until(ExpectedConditions.elementToBeClickable(credentialsTab)).click();
+        System.out.println("Clicked credentials tab - SUCCESS");
+
+        wait.until(ExpectedConditions.elementToBeClickable(deleteCredentialButton)).click();
+        System.out.println("Clicked delete note button - SUCCESS");
+
+        return;
+    }
+
+    public boolean doesCredentialExist(WebDriver webDriver){
+
+        WebDriverWait wait = new WebDriverWait(webDriver, 20);
+        wait.until(ExpectedConditions.elementToBeClickable(credentialsTab)).click();
+        return (doesElementExist(webDriver,"credentialURLPostSubmit") && doesElementExist(webDriver, "credentialUsernamePostSubmit"));
+
     }
 }

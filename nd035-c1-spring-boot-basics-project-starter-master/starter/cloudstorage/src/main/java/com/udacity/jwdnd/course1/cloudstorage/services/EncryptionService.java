@@ -46,24 +46,6 @@ public class EncryptionService {
             logger.error(e.getMessage());
         }
 
-        System.out.println("in decrypt value");
-        System.out.println("Data being decrypted" + data);
-        System.out.println("key being used" + key);
-        System.out.println("Decrypted Value" + (new String(decryptedValue)));
         return new String(decryptedValue);
-    }
-
-    public String getSecureKey() {
-        try {
-            KeyGenerator gen = KeyGenerator.getInstance("AES");
-            gen.init(128); /* 128-bit AES */
-            SecretKey secret = gen.generateKey();
-            byte[] binary = secret.getEncoded();
-            String key = String.format("%032X", new BigInteger(+1, binary));
-            return key;
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
     }
 }

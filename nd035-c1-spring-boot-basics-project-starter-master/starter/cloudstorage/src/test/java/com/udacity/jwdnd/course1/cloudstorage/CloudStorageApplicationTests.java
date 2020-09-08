@@ -175,7 +175,6 @@ class CloudStorageApplicationTests {
 
 	@Test
 	public void testNoteDelete() {
-		String[] results;
 		boolean result;
 		System.out.println("testing note creation");
 		String noteTitle = "Test Title";
@@ -273,7 +272,11 @@ class CloudStorageApplicationTests {
 
 		//navigate to home page
 		driver.get(baseURL + "/home");
-		//clearPassword = homePage.retrieveClearTextPassword(driver);
+
+		//retrieve clear password in edit mode
+		clearPassword = homePage.retrieveClearTextPassword(driver);
+
+		//edit credential
 		homePage.editCredential(driver, editUrl, editUsername, editPassword);
 
 		//navigate to home page
@@ -282,8 +285,50 @@ class CloudStorageApplicationTests {
 		//check values displayed for the new note
 		results = homePage.retrieveCredential(driver);
 
-		assertEquals(url, results[0]);
-		assertEquals(username, results[1]);
-		assertNotEquals(password, results[2]);
+		//test unencrypted password
+		assertEquals(clearPassword, password);
+		//test edited credential
+		assertEquals(editUrl, results[0]);
+		assertEquals(editUsername, results[1]);
+		assertNotEquals(editPassword, results[2]);
+	}
+
+	@Test
+	public void testCredentialDelete() {
+		boolean result;
+
+		String url = "test url";
+		String username = "test username";
+		String password = "password";
+
+		//SignUp
+		driver.get(baseURL + "/signup");
+		SignUpPage signUpPage = new SignUpPage(driver);
+		signUpPage.signUp(fName, lName, uName, passWord);
+
+		//Login
+		System.out.println("LOGGING IN");
+		driver.get(baseURL + "/login");
+		LoginPage loginPage = new LoginPage(driver);
+		loginPage.login(uName, passWord);
+
+		//create new credential
+		HomePage homePage = new HomePage(driver);
+		homePage.createCredential(driver, url, username, password);
+
+		//navigate to home page
+		driver.get(baseURL + "/home");
+
+		//delete the newly created note
+		homePage.deleteCredential(driver);
+
+		//navigate to home page
+		driver.get(baseURL + "/home");
+
+		//check values displayed for the new note
+		result = homePage.doesCredentialExist(driver);
+
+		assertEquals(false, result);
+
 	}
 }
