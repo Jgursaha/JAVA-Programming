@@ -24,12 +24,8 @@
   <component name="ChangeListManager">
     <list default="true" id="31cc9a93-8d3e-4ade-9538-a01323215b3e" name="Default Changelist" comment="Password decryption issue">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starter/cloudstorage/src/main/java/com/udacity/jwdnd/course1/cloudstorage/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/starter/cloudstorage/src/main/java/com/udacity/jwdnd/course1/cloudstorage/controller/HomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/starter/cloudstorage/src/main/java/com/udacity/jwdnd/course1/cloudstorage/services/CredentialService.java" beforeDir="false" afterPath="$PROJECT_DIR$/starter/cloudstorage/src/main/java/com/udacity/jwdnd/course1/cloudstorage/services/CredentialService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/starter/cloudstorage/src/main/java/com/udacity/jwdnd/course1/cloudstorage/services/EncryptionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/starter/cloudstorage/src/main/java/com/udacity/jwdnd/course1/cloudstorage/services/EncryptionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starter/cloudstorage/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/starter/cloudstorage/src/main/resources/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starter/cloudstorage/src/test/java/com/udacity/jwdnd/course1/cloudstorage/CloudStorageApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/starter/cloudstorage/src/test/java/com/udacity/jwdnd/course1/cloudstorage/CloudStorageApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starter/cloudstorage/src/test/java/com/udacity/jwdnd/course1/cloudstorage/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/starter/cloudstorage/src/test/java/com/udacity/jwdnd/course1/cloudstorage/HomePage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -223,29 +219,29 @@
     </state>
     <state x="427" y="-839" key="#com.intellij.ide.util.MemberChooser/0.0.1280.800/-346.-1080.1920.1080@-346.-1080.1920.1080" timestamp="1599017686258" />
     <state x="427" y="-821" key="#com.intellij.ide.util.MemberChooser/0.23.1280.777/-346.-1057.1920.1057@-346.-1057.1920.1057" timestamp="1599127779208" />
-    <state width="1878" height="293" key="GridCell.Tab.0.bottom" timestamp="1599561623609">
+    <state width="1878" height="293" key="GridCell.Tab.0.bottom" timestamp="1599562733204">
       <screen x="-346" y="-1057" width="1920" height="1057" />
     </state>
     <state width="1878" height="327" key="GridCell.Tab.0.bottom/0.0.1280.800/-346.-1080.1920.1080@-346.-1080.1920.1080" timestamp="1599017782324" />
-    <state width="1878" height="293" key="GridCell.Tab.0.bottom/0.23.1280.777/-346.-1057.1920.1057@-346.-1057.1920.1057" timestamp="1599561623609" />
+    <state width="1878" height="293" key="GridCell.Tab.0.bottom/0.23.1280.777/-346.-1057.1920.1057@-346.-1057.1920.1057" timestamp="1599562733204" />
     <state width="1238" height="250" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1599453796338" />
-    <state width="1878" height="293" key="GridCell.Tab.0.center" timestamp="1599561623605">
+    <state width="1878" height="293" key="GridCell.Tab.0.center" timestamp="1599562733202">
       <screen x="-346" y="-1057" width="1920" height="1057" />
     </state>
     <state width="1878" height="327" key="GridCell.Tab.0.center/0.0.1280.800/-346.-1080.1920.1080@-346.-1080.1920.1080" timestamp="1599017782322" />
-    <state width="1878" height="293" key="GridCell.Tab.0.center/0.23.1280.777/-346.-1057.1920.1057@-346.-1057.1920.1057" timestamp="1599561623605" />
+    <state width="1878" height="293" key="GridCell.Tab.0.center/0.23.1280.777/-346.-1057.1920.1057@-346.-1057.1920.1057" timestamp="1599562733202" />
     <state width="1238" height="250" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1599453796337" />
-    <state width="1878" height="293" key="GridCell.Tab.0.left" timestamp="1599561623603">
+    <state width="1878" height="293" key="GridCell.Tab.0.left" timestamp="1599562733202">
       <screen x="-346" y="-1057" width="1920" height="1057" />
     </state>
     <state width="1878" height="327" key="GridCell.Tab.0.left/0.0.1280.800/-346.-1080.1920.1080@-346.-1080.1920.1080" timestamp="1599017782320" />
-    <state width="1878" height="293" key="GridCell.Tab.0.left/0.23.1280.777/-346.-1057.1920.1057@-346.-1057.1920.1057" timestamp="1599561623603" />
+    <state width="1878" height="293" key="GridCell.Tab.0.left/0.23.1280.777/-346.-1057.1920.1057@-346.-1057.1920.1057" timestamp="1599562733202" />
     <state width="1238" height="250" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1599453796337" />
-    <state width="1878" height="293" key="GridCell.Tab.0.right" timestamp="1599561623606">
+    <state width="1878" height="293" key="GridCell.Tab.0.right" timestamp="1599562733203">
       <screen x="-346" y="-1057" width="1920" height="1057" />
     </state>
     <state width="1878" height="327" key="GridCell.Tab.0.right/0.0.1280.800/-346.-1080.1920.1080@-346.-1080.1920.1080" timestamp="1599017782323" />
-    <state width="1878" height="293" key="GridCell.Tab.0.right/0.23.1280.777/-346.-1057.1920.1057@-346.-1057.1920.1057" timestamp="1599561623606" />
+    <state width="1878" height="293" key="GridCell.Tab.0.right/0.23.1280.777/-346.-1057.1920.1057@-346.-1057.1920.1057" timestamp="1599562733203" />
     <state width="1238" height="250" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1599453796337" />
     <state x="214" y="-789" key="Vcs.Push.Dialog.v2" timestamp="1599128637801">
       <screen x="-346" y="-1057" width="1920" height="1057" />
