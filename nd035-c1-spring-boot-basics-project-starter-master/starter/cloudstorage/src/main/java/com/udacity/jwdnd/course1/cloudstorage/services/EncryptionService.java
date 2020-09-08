@@ -45,6 +45,10 @@ public class EncryptionService {
             logger.error(e.getMessage());
         }
 
+        System.out.println("in decrypt value");
+        System.out.println("Data being decrypted" + data);
+        System.out.println("key being used" + key);
+        System.out.println("Decrypted Value" + (new String(decryptedValue)));
         return new String(decryptedValue);
     }
 }

@@ -197,6 +197,7 @@ public class HomeController {
             System.out.println("In add Credential function, user wants to update note");
             System.out.println("User sent the credential url: " + currentCredential.getUrl());
             System.out.println("User sent the credential Username : " + currentCredential.getUsername());
+            System.out.println("User sent the credential Password : " + currentCredential.getPassword());
             System.out.println("User sent the credential id: " + currentCredential.getCredentialId());
 
             int updateResult = credentialService.updateCredential(currentCredential);

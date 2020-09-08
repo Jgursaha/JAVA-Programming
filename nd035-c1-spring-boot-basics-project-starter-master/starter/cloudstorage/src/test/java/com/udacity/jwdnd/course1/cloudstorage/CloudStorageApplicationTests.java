@@ -10,6 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.web.server.LocalServerPort;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class CloudStorageApplicationTests {
@@ -209,5 +210,80 @@ class CloudStorageApplicationTests {
 
 		assertEquals(false, result);
 
+	}
+
+	@Test
+	public void testCredentialCreation() {
+		String[] results;
+		String url = "test url";
+		String username = "test username";
+		String password = "password";
+
+		//SignUp
+		driver.get(baseURL + "/signup");
+		SignUpPage signUpPage = new SignUpPage(driver);
+		signUpPage.signUp(fName, lName, uName, passWord);
+
+		//Login
+		System.out.println("LOGGING IN");
+		driver.get(baseURL + "/login");
+		LoginPage loginPage = new LoginPage(driver);
+		loginPage.login(uName, passWord);
+
+		//create new credential
+		HomePage homePage = new HomePage(driver);
+		homePage.createCredential(driver, url, username, password);
+
+		//navigate to home page
+		driver.get(baseURL + "/home");
+
+		//check values displayed for the new note
+		results = homePage.retrieveCredential(driver);
+
+		assertEquals(url, results[0]);
+		assertEquals(username, results[1]);
+		assertNotEquals(password, results[2]);
+	}
+
+	@Test
+	public void testCredentialEdit() {
+		String[] results;
+		String url = "test url";
+		String username = "test username";
+		String password = "password";
+		String clearPassword;
+		String editUrl = "test url edit";
+		String editUsername = "edit test username";
+		String editPassword = "editpassword";
+
+		//SignUp
+		driver.get(baseURL + "/signup");
+		SignUpPage signUpPage = new SignUpPage(driver);
+		signUpPage.signUp(fName, lName, uName, passWord);
+
+		//Login
+		System.out.println("LOGGING IN");
+		driver.get(baseURL + "/login");
+		LoginPage loginPage = new LoginPage(driver);
+		loginPage.login(uName, passWord);
+
+		//create new credential
+		HomePage homePage = new HomePage(driver);
+		homePage.createCredential(driver, url, username, password);
+
+		//navigate to home page
+		driver.get(baseURL + "/home");
+		//clearPassword = homePage.retrieveClearTextPassword(driver);
+		homePage.editCredential(driver, editUrl, editUsername, editPassword);
+
+		//navigate to home page
+		driver.get(baseURL + "/home");
+
+		//check values displayed for the new note
+		results = homePage.retrieveCredential(driver);
+
+		assertEquals(url, results[0]);
+		assertEquals(username, results[1]);
+		assertNotEquals(password, results[2]);
 	}
 }
