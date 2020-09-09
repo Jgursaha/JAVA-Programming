@@ -13,6 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class CloudStorageApplicationTests {
 
 	private String fName = "Jitesh";
@@ -46,6 +47,7 @@ class CloudStorageApplicationTests {
 
 
 	@Test
+	@Order(1)
 	public void unauthorisedUserAccess() {
 
 		//test login page is accessible by unauthorised user
@@ -75,6 +77,7 @@ class CloudStorageApplicationTests {
 
 
 	@Test
+	@Order(2)
 	public void testSignupLogin() {
 
 		//SignUp
@@ -101,16 +104,12 @@ class CloudStorageApplicationTests {
 	}
 
 	@Test
+	@Order(3)
 	public void testNoteCreation() {
 		String[] results;
 		System.out.println("testing note creation");
 		String noteTitle = "Test Title";
 		String noteDescription = "Test description.";
-
-		//SignUp
-		driver.get(baseURL + "/signup");
-		SignUpPage signUpPage = new SignUpPage(driver);
-		signUpPage.signUp(fName, lName, uName, passWord);
 
 		//Login
 		System.out.println("LOGGING IN");
@@ -134,18 +133,12 @@ class CloudStorageApplicationTests {
 	}
 
 	@Test
+	@Order(4)
 	public void testNoteEdit() {
 		String[] results;
 		System.out.println("testing note creation");
-		String noteTitle = "Test Title";
-		String noteDescription = "Test description.";
 		String editedNoteTitle = "Edit Test Title";
 		String editedNoteDescription = "Edit Test description.";
-
-		//SignUp
-		driver.get(baseURL + "/signup");
-		SignUpPage signUpPage = new SignUpPage(driver);
-		signUpPage.signUp(fName, lName, uName, passWord);
 
 		//Login
 		System.out.println("LOGGING IN");
@@ -153,14 +146,11 @@ class CloudStorageApplicationTests {
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.login(uName, passWord);
 
-		//create new note
-		HomePage homePage = new HomePage(driver);
-		homePage.createNote(driver, noteTitle, noteDescription);
-
 		//navigate to home page
 		driver.get(baseURL + "/home");
 
 		//edit the newly created note
+		HomePage homePage = new HomePage(driver);
 		homePage.editNote(driver, editedNoteTitle, editedNoteDescription);
 
 		//navigate to home page
@@ -174,16 +164,10 @@ class CloudStorageApplicationTests {
 	}
 
 	@Test
+	@Order(5)
 	public void testNoteDelete() {
 		boolean result;
 		System.out.println("testing note creation");
-		String noteTitle = "Test Title";
-		String noteDescription = "Test description.";
-
-		//SignUp
-		driver.get(baseURL + "/signup");
-		SignUpPage signUpPage = new SignUpPage(driver);
-		signUpPage.signUp(fName, lName, uName, passWord);
 
 		//Login
 		System.out.println("LOGGING IN");
@@ -191,14 +175,11 @@ class CloudStorageApplicationTests {
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.login(uName, passWord);
 
-		//create new note
-		HomePage homePage = new HomePage(driver);
-		homePage.createNote(driver, noteTitle, noteDescription);
-
 		//navigate to home page
 		driver.get(baseURL + "/home");
 
 		//delete the newly created note
+		HomePage homePage = new HomePage(driver);
 		homePage.deleteNote(driver);
 
 		//navigate to home page
@@ -212,16 +193,12 @@ class CloudStorageApplicationTests {
 	}
 
 	@Test
+	@Order(6)
 	public void testCredentialCreation() {
 		String[] results;
 		String url = "test url";
 		String username = "test username";
 		String password = "password";
-
-		//SignUp
-		driver.get(baseURL + "/signup");
-		SignUpPage signUpPage = new SignUpPage(driver);
-		signUpPage.signUp(fName, lName, uName, passWord);
 
 		//Login
 		System.out.println("LOGGING IN");
@@ -245,20 +222,16 @@ class CloudStorageApplicationTests {
 	}
 
 	@Test
+	@Order(7)
 	public void testCredentialEdit() {
 		String[] results;
-		String url = "test url";
-		String username = "test username";
-		String password = "password";
+		//String url = "test url";
+		//String username = "test username";
+		//String password = "password";
 		String clearPassword;
 		String editUrl = "test url edit";
 		String editUsername = "edit test username";
 		String editPassword = "editpassword";
-
-		//SignUp
-		driver.get(baseURL + "/signup");
-		SignUpPage signUpPage = new SignUpPage(driver);
-		signUpPage.signUp(fName, lName, uName, passWord);
 
 		//Login
 		System.out.println("LOGGING IN");
@@ -266,18 +239,18 @@ class CloudStorageApplicationTests {
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.login(uName, passWord);
 
-		//create new credential
+		//navigate to home page
 		HomePage homePage = new HomePage(driver);
-		homePage.createCredential(driver, url, username, password);
+		driver.get(baseURL + "/home");
+
+		//edit credential
+		homePage.editCredential(driver, editUrl, editUsername, editPassword);
 
 		//navigate to home page
 		driver.get(baseURL + "/home");
 
 		//retrieve clear password in edit mode
 		clearPassword = homePage.retrieveClearTextPassword(driver);
-
-		//edit credential
-		homePage.editCredential(driver, editUrl, editUsername, editPassword);
 
 		//navigate to home page
 		driver.get(baseURL + "/home");
@@ -286,7 +259,9 @@ class CloudStorageApplicationTests {
 		results = homePage.retrieveCredential(driver);
 
 		//test unencrypted password
-		assertEquals(clearPassword, password);
+		System.out.println("Clear Password is: "+clearPassword);
+
+		assertEquals(clearPassword, editPassword);
 		//test edited credential
 		assertEquals(editUrl, results[0]);
 		assertEquals(editUsername, results[1]);
@@ -294,6 +269,7 @@ class CloudStorageApplicationTests {
 	}
 
 	@Test
+	@Order(8)
 	public void testCredentialDelete() {
 		boolean result;
 
@@ -301,25 +277,18 @@ class CloudStorageApplicationTests {
 		String username = "test username";
 		String password = "password";
 
-		//SignUp
-		driver.get(baseURL + "/signup");
-		SignUpPage signUpPage = new SignUpPage(driver);
-		signUpPage.signUp(fName, lName, uName, passWord);
-
 		//Login
 		System.out.println("LOGGING IN");
 		driver.get(baseURL + "/login");
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.login(uName, passWord);
 
-		//create new credential
-		HomePage homePage = new HomePage(driver);
-		homePage.createCredential(driver, url, username, password);
 
 		//navigate to home page
 		driver.get(baseURL + "/home");
 
 		//delete the newly created note
+		HomePage homePage = new HomePage(driver);
 		homePage.deleteCredential(driver);
 
 		//navigate to home page

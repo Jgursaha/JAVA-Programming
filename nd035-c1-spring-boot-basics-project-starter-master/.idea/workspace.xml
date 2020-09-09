@@ -23,13 +23,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31cc9a93-8d3e-4ade-9538-a01323215b3e" name="Default Changelist" comment="Password decryption issue">
+      <change afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JAVA-Programming.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/starter/cloudstorage/src/main/java/com/udacity/jwdnd/course1/cloudstorage/controller/MyErrorController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/starter/cloudstorage/src/main/resources/templates/error.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starter/cloudstorage/src/main/java/com/udacity/jwdnd/course1/cloudstorage/mapper/CredentialMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/starter/cloudstorage/src/main/java/com/udacity/jwdnd/course1/cloudstorage/mapper/CredentialMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starter/cloudstorage/src/main/java/com/udacity/jwdnd/course1/cloudstorage/services/CredentialService.java" beforeDir="false" afterPath="$PROJECT_DIR$/starter/cloudstorage/src/main/java/com/udacity/jwdnd/course1/cloudstorage/services/CredentialService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starter/cloudstorage/src/main/java/com/udacity/jwdnd/course1/cloudstorage/services/EncryptionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/starter/cloudstorage/src/main/java/com/udacity/jwdnd/course1/cloudstorage/services/EncryptionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starter/cloudstorage/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/starter/cloudstorage/src/main/resources/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/starter/cloudstorage/src/main/java/com/udacity/jwdnd/course1/cloudstorage/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/starter/cloudstorage/src/main/java/com/udacity/jwdnd/course1/cloudstorage/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/starter/cloudstorage/src/main/java/com/udacity/jwdnd/course1/cloudstorage/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/starter/cloudstorage/src/main/java/com/udacity/jwdnd/course1/cloudstorage/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/starter/cloudstorage/src/main/resources/templates/result.html" beforeDir="false" afterPath="$PROJECT_DIR$/starter/cloudstorage/src/main/resources/templates/result.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/starter/cloudstorage/src/test/java/com/udacity/jwdnd/course1/cloudstorage/CloudStorageApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/starter/cloudstorage/src/test/java/com/udacity/jwdnd/course1/cloudstorage/CloudStorageApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starter/cloudstorage/src/test/java/com/udacity/jwdnd/course1/cloudstorage/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/starter/cloudstorage/src/test/java/com/udacity/jwdnd/course1/cloudstorage/HomePage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +77,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/starter/cloudstorage/src/main/resources/templates" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
@@ -86,7 +91,7 @@
       <recent name="$PROJECT_DIR$/starter/cloudstorage/src/main/resources/templates" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CloudStorageApplicationTests.testCredentialCreation">
+  <component name="RunManager" selected="JUnit.CloudStorageApplicationTests">
     <configuration name="CloudStorageApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.udacity.jwdnd.course1.cloudstorage.CloudStorageApplication" />
       <module name="cloudstorage" />
@@ -165,10 +170,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CloudStorageApplicationTests.testCredentialCreation" />
-        <item itemvalue="Application.CloudStorageApplication" />
-        <item itemvalue="JUnit.CloudStorageApplicationTests.testNoteCreation" />
         <item itemvalue="JUnit.CloudStorageApplicationTests" />
+        <item itemvalue="Application.CloudStorageApplication" />
+        <item itemvalue="JUnit.CloudStorageApplicationTests.testCredentialCreation" />
+        <item itemvalue="JUnit.CloudStorageApplicationTests.testNoteCreation" />
         <item itemvalue="JUnit.CloudStorageApplicationTests.testCredentialDelete" />
       </list>
     </recent_temporary>
@@ -222,29 +227,29 @@
     </state>
     <state x="427" y="-839" key="#com.intellij.ide.util.MemberChooser/0.0.1280.800/-346.-1080.1920.1080@-346.-1080.1920.1080" timestamp="1599017686258" />
     <state x="427" y="-821" key="#com.intellij.ide.util.MemberChooser/0.23.1280.777/-346.-1057.1920.1057@-346.-1057.1920.1057" timestamp="1599127779208" />
-    <state width="1878" height="293" key="GridCell.Tab.0.bottom" timestamp="1599598261206">
+    <state width="1878" height="293" key="GridCell.Tab.0.bottom" timestamp="1599649281601">
       <screen x="-346" y="-1057" width="1920" height="1057" />
     </state>
     <state width="1878" height="327" key="GridCell.Tab.0.bottom/0.0.1280.800/-346.-1080.1920.1080@-346.-1080.1920.1080" timestamp="1599017782324" />
-    <state width="1878" height="293" key="GridCell.Tab.0.bottom/0.23.1280.777/-346.-1057.1920.1057@-346.-1057.1920.1057" timestamp="1599598261206" />
+    <state width="1878" height="293" key="GridCell.Tab.0.bottom/0.23.1280.777/-346.-1057.1920.1057@-346.-1057.1920.1057" timestamp="1599649281601" />
     <state width="1238" height="250" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1599453796338" />
-    <state width="1878" height="293" key="GridCell.Tab.0.center" timestamp="1599598261205">
+    <state width="1878" height="293" key="GridCell.Tab.0.center" timestamp="1599649281599">
       <screen x="-346" y="-1057" width="1920" height="1057" />
     </state>
     <state width="1878" height="327" key="GridCell.Tab.0.center/0.0.1280.800/-346.-1080.1920.1080@-346.-1080.1920.1080" timestamp="1599017782322" />
-    <state width="1878" height="293" key="GridCell.Tab.0.center/0.23.1280.777/-346.-1057.1920.1057@-346.-1057.1920.1057" timestamp="1599598261205" />
+    <state width="1878" height="293" key="GridCell.Tab.0.center/0.23.1280.777/-346.-1057.1920.1057@-346.-1057.1920.1057" timestamp="1599649281599" />
     <state width="1238" height="250" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1599453796337" />
-    <state width="1878" height="293" key="GridCell.Tab.0.left" timestamp="1599598261204">
+    <state width="1878" height="293" key="GridCell.Tab.0.left" timestamp="1599649281598">
       <screen x="-346" y="-1057" width="1920" height="1057" />
     </state>
     <state width="1878" height="327" key="GridCell.Tab.0.left/0.0.1280.800/-346.-1080.1920.1080@-346.-1080.1920.1080" timestamp="1599017782320" />
-    <state width="1878" height="293" key="GridCell.Tab.0.left/0.23.1280.777/-346.-1057.1920.1057@-346.-1057.1920.1057" timestamp="1599598261204" />
+    <state width="1878" height="293" key="GridCell.Tab.0.left/0.23.1280.777/-346.-1057.1920.1057@-346.-1057.1920.1057" timestamp="1599649281598" />
     <state width="1238" height="250" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1599453796337" />
-    <state width="1878" height="293" key="GridCell.Tab.0.right" timestamp="1599598261205">
+    <state width="1878" height="293" key="GridCell.Tab.0.right" timestamp="1599649281600">
       <screen x="-346" y="-1057" width="1920" height="1057" />
     </state>
     <state width="1878" height="327" key="GridCell.Tab.0.right/0.0.1280.800/-346.-1080.1920.1080@-346.-1080.1920.1080" timestamp="1599017782323" />
-    <state width="1878" height="293" key="GridCell.Tab.0.right/0.23.1280.777/-346.-1057.1920.1057@-346.-1057.1920.1057" timestamp="1599598261205" />
+    <state width="1878" height="293" key="GridCell.Tab.0.right/0.23.1280.777/-346.-1057.1920.1057@-346.-1057.1920.1057" timestamp="1599649281600" />
     <state width="1238" height="250" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1599453796337" />
     <state x="214" y="-789" key="Vcs.Push.Dialog.v2" timestamp="1599128637801">
       <screen x="-346" y="-1057" width="1920" height="1057" />
@@ -254,5 +259,9 @@
       <screen x="-346" y="-1057" width="1920" height="1057" />
     </state>
     <state x="415" y="-608" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1280.777/-346.-1057.1920.1057@-346.-1057.1920.1057" timestamp="1598998380482" />
+    <state x="8" y="-906" key="new project wizard" timestamp="1599602354041">
+      <screen x="-346" y="-1057" width="1920" height="1057" />
+    </state>
+    <state x="8" y="-906" key="new project wizard/0.23.1280.777/-346.-1057.1920.1057@-346.-1057.1920.1057" timestamp="1599602354041" />
   </component>
 </project>

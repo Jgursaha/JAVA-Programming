@@ -74,6 +74,11 @@ public class HomeController {
             System.out.println("Problem reading InputStream");
         }
 
+        if (multipartFile.getOriginalFilename().isEmpty()){
+            model.addAttribute("fileEmptyError", true);
+            return "result.html";
+        }
+
         //set fields in file object
         file.setFilename(multipartFile.getOriginalFilename());
         file.setFilesize(multipartFile.getSize());

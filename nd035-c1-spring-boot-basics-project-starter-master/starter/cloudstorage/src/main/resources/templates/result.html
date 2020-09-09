@@ -22,6 +22,12 @@
                 <span>A file with the same name already exists. Upload unsuccessful. Click <a th:href="@{/home}">here</a> to continue.</span>
             </div>
 
+            <!-- Attempt to upload empty file -->
+            <div th:if="${fileEmptyError}"class="alert alert-danger fill-parent">
+                <h1 class="display-5">Error</h1>
+                <span>Blank files can't be uploaded. Upload unsuccessful. Click <a th:href="@{/home}">here</a> to continue.</span>
+            </div>
+
             <!-- Unsuccessful File Upload -->
             <div th:if="${fileUploadError}"class="alert alert-danger fill-parent">
                 <h1 class="display-5">Error</h1>
