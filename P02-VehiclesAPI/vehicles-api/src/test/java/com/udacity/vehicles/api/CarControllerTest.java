@@ -137,7 +137,7 @@ public class CarControllerTest {
          *   should utilize the car from `getCar()` below.
          */
         mvc.perform(
-                delete(new URI("cars/1"))
+                delete(new URI("/cars/1"))
                         .accept(MediaType.APPLICATION_JSON_UTF8))
 
                 .andExpect(status().isNoContent());
