@@ -6,6 +6,7 @@ import com.udacity.pricing.domain.price.PriceRepository;
 import com.udacity.pricing.service.PricingService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -55,7 +56,8 @@ public class PricingServiceApplicationTests {
 				.andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8));
 				//.andExpect(content().json("[]"));
 
-		//verify(pricingService, times(1)).getPrice(1L);
+		//verify(pricingService, Mockito.times(1)).getPrice(1L);
+		//verify(carService, Mockito.times(1)).findById(1L);
 	}
 
 	//@Test
