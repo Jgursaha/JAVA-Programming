@@ -6,10 +6,9 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
-@Table(name = "plant")
+//@Table(name = "plant")
 public class Flower extends Plant{
 
-    @Nationalized
     String color;
 
     public String getColor() {

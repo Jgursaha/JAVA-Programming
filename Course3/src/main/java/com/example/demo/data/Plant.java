@@ -5,14 +5,16 @@ import com.fasterxml.jackson.annotation.JsonView;
 import org.hibernate.annotations.Nationalized;
 
 import javax.persistence.*;
+import javax.persistence.Id;
 import java.math.BigDecimal;
 import java.util.List;
 
-@Entity
 @Inheritance(strategy = InheritanceType.JOINED)
+@MappedSuperclass
 public class Plant {
     @GeneratedValue
     @Id
+    @Column(name="id")
     private Long id;
 
     @JsonView(Views.class)

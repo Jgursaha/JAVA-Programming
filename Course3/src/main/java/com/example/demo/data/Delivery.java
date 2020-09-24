@@ -5,16 +5,24 @@ import org.hibernate.annotations.Nationalized;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
+//import javax.persistence.Id;
 import java.sql.Time;
 import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
-@Entity
+//@NamedQueries({
+//        @NamedQuery(
+//                name = "Delivery.findByName",
+//                query = "select d from Delivery d where d.recipientName = :recipientName")
+//})
+
+
 public class Delivery {
 
     @Id
     @GeneratedValue
+    @Column(name="delivery_id")
     private Long id;
 
     @Nationalized

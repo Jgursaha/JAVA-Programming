@@ -44,7 +44,12 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>de.lars-sh</groupId>
+            <artifactId>lombok-annotations</artifactId>
+            <version>1.18.12</version>
+        </dependency>
+    </dependencies>
 
 	<build>
 		<plugins>
