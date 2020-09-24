@@ -11,18 +11,17 @@ import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
-//@NamedQueries({
-//        @NamedQuery(
-//                name = "Delivery.findByName",
-//                query = "select d from Delivery d where d.recipientName = :recipientName")
-//})
+@NamedQueries({
+        @NamedQuery(
+                name = "Delivery.findByName",
+                query = "select d from Delivery d where d.recipientName = :recipientName")
+})
 
 
 public class Delivery {
 
     @Id
     @GeneratedValue
-    @Column(name="delivery_id")
     private Long id;
 
     @Nationalized

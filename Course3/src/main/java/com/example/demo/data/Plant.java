@@ -9,12 +9,14 @@ import javax.persistence.Id;
 import java.math.BigDecimal;
 import java.util.List;
 
+@Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-@MappedSuperclass
+@Table(name = "plant")
 public class Plant {
-    @GeneratedValue
+
+
     @Id
-    @Column(name="id")
+    @GeneratedValue
     private Long id;
 
     @JsonView(Views.class)
