@@ -16,7 +16,7 @@ public class DataSourceConfig {
     @ConfigurationProperties(prefix="spring.datasource")
     public DataSource getDataSource() {
         DataSourceBuilder dsb = DataSourceBuilder.create();
-        dsb.url("jdbc:mysql://${MYSQL_HOST:localhost}:3306/plant?serverTimezone=UTC");
+        dsb.url("jdbc:mysql://localhost:3306/plant?serverTimezone=UTC");
         return dsb.build();
     }
 }
