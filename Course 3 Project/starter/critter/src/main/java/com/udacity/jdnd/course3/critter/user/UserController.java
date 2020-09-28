@@ -34,8 +34,21 @@ public class UserController {
 
     @PostMapping("/customer")
     public CustomerDTO saveCustomer(@RequestBody CustomerDTO customerDTO){
-        return convertCustomerToCustomerDTO(customerService.save(convertCustomerDTOToCustomer(customerDTO)));
+        List < Long > petIds = customerDTO.getPetIds();
+        List < Pet > pets = new ArrayList < > ();
+
+        if (petIds != null) {
+            for (Long petId: petIds) {
+                pets.add(petService.findPet(petId));
+            }
+        }
+
+        Customer customer = convertCustomerDTOToCustomer(customerDTO);
+        customer.setPets(pets);
+        Customer savedCustomer = customerService.save(customer);
+        return convertCustomerToCustomerDTO(savedCustomer);
     }
+
 
     @GetMapping("/customer")
     public List<CustomerDTO> getAllCustomers(){
@@ -43,9 +56,12 @@ public class UserController {
         List<CustomerDTO> customerDTOS = new ArrayList<CustomerDTO>();
 
         for (Customer customer: customers) {
+            System.out.println("Converting customer with id to a DTO: "+customer.getId());
+            System.out.println("This customer has number of pets = "+customer.getPets().size());
             customerDTOS.add(convertCustomerToCustomerDTO(customer));
         }
 
+        System.out.println("Size of CUSTOMERDTOS in getAllCustoemrs in UserContrOLLER!!: "+ customerDTOS.size());
         return customerDTOS;
     }
 

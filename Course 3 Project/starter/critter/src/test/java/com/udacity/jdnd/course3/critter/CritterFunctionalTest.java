@@ -73,6 +73,7 @@ public class CritterFunctionalTest {
 
         //make sure pet contains customer id
         PetDTO retrievedPet = petController.getPet(newPet.getId());
+        System.out.println("Id of pet which was retrieved (retrievedPet): "+ retrievedPet.getId());
         Assertions.assertEquals(retrievedPet.getId(), newPet.getId());
         Assertions.assertEquals(retrievedPet.getOwnerId(), newCustomer.getId());
 
@@ -90,6 +91,7 @@ public class CritterFunctionalTest {
         System.out.println("retrievedCustomer.getPetIDs is it null? -> " + retrievedCustomer.getPetIds());
         System.out.println("retrievedCustomer.getPetIDs SIZE IS -> " + retrievedCustomer.getPetIds().size());
         Assertions.assertTrue(retrievedCustomer.getPetIds() != null && retrievedCustomer.getPetIds().size() > 0);
+        System.out.println("retrievedCustomer id of 0th pet is  -> " + retrievedCustomer.getPetIds().get(0));
         Assertions.assertEquals(retrievedCustomer.getPetIds().get(0), retrievedPet.getId());
     }
 
