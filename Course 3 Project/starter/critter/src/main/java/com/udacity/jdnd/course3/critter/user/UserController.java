@@ -34,8 +34,8 @@ public class UserController {
 
     @PostMapping("/customer")
     public CustomerDTO saveCustomer(@RequestBody CustomerDTO customerDTO){
-        List < Long > petIds = customerDTO.getPetIds();
-        List < Pet > pets = new ArrayList < > ();
+        List <Long> petIds = customerDTO.getPetIds();
+        List <Pet> pets = new ArrayList <> ();
 
         if (petIds != null) {
             for (Long petId: petIds) {
@@ -67,6 +67,12 @@ public class UserController {
 
     @GetMapping("/customer/pet/{petId}")
     public CustomerDTO getOwnerByPet(@PathVariable long petId){
+        Customer customer = customerService.findById(petId);
+
+        if(customer != null){
+            return convertCustomerToCustomerDTO(customer);
+        }
+
         throw new UnsupportedOperationException();
     }
 
@@ -99,12 +105,15 @@ public class UserController {
         List<Pet> pets = customer.getPets();
 
         if(pets != null) {
-            List<Long> petIds = new ArrayList<Long>();
+            System.out.println("Entered if loop inside convertCustomerToCustomerDTO");
+            List<Long> petIds = new ArrayList<>();
 
             for (Pet pet : pets) {
+                System.out.println("Inside for loop inside convertCustomerToCustomerDTO");
                 petIds.add(pet.getId());
             }
 
+            System.out.println("petIds list has size -> "+ petIds.size());
             customerDTO.setPetIds(petIds);
         }
         return customerDTO;

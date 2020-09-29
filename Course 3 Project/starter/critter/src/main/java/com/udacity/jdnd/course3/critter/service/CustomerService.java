@@ -26,8 +26,12 @@ public class CustomerService {
     }
 
     public Customer findById(Long id){
-        Optional< Customer > optionalCustomer = customerRepository.findById(id);
+        Optional <Customer> optionalCustomer = customerRepository.findById(id);
         return optionalCustomer.orElse(null);
+    }
+
+    public Customer findOwnerByPet(Long petId){
+        return customerRepository.findByPetId(petId);
     }
 
 }

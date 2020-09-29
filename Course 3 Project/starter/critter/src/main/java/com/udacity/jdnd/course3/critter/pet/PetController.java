@@ -36,6 +36,12 @@ public class PetController {
         pet.setCustomer(customer);
         Pet savedPet = petService.save(pet);
 
+        //Add pet to customer
+        if (customer != null){
+            customer.addPet(savedPet);
+        }
+
+
         return convertPetToPetDTO(savedPet);
     }
 
@@ -70,14 +76,17 @@ public class PetController {
     private PetDTO convertPetToPetDTO(Pet pet){
         PetDTO petDTO = new PetDTO();
         BeanUtils.copyProperties(pet, petDTO);
-        petDTO.setOwnerId(pet.getCustomer().getId());
+        if (pet.getCustomer() != null) {
+            petDTO.setOwnerId(pet.getCustomer().getId());
+        }
+
         return petDTO;
     }
 
     private Pet convertPetDTOToPet(PetDTO petDTO){
         Pet pet = new Pet();
         BeanUtils.copyProperties(petDTO, pet);
-        pet.setCustomer(customerService.findById(petDTO.getOwnerId()));
+        //pet.setCustomer(customerService.findById(petDTO.getOwnerId()));
         return pet;
     }
 }

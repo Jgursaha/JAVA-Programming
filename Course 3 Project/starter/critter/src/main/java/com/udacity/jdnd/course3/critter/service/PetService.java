@@ -18,9 +18,6 @@ public class PetService {
     @Autowired
     PetRepository petRepository;
 
-    @Autowired
-    CustomerRepository customerRepository;
-
     public Pet save(Pet pet){
         return petRepository.save(pet);
     }
