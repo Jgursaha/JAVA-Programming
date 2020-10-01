@@ -30,4 +30,6 @@ public class PetService {
         return petRepository.getPetsByCustomer_Id(ownerId);
     }
 
+    public List<Pet> getAllPets(){ return petRepository.findAll();}
+
 }

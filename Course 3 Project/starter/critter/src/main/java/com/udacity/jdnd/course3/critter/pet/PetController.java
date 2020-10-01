@@ -58,7 +58,14 @@ public class PetController {
 
     @GetMapping
     public List<PetDTO> getPets(){
-        throw new UnsupportedOperationException();
+        List<Pet> retrievedPets = petService.getAllPets();
+        List<PetDTO> petDTOS = new ArrayList<>();
+
+        for(Pet pet : retrievedPets){
+            petDTOS.add(convertPetToPetDTO(pet));
+        }
+
+        return petDTOS;
     }
 
     @GetMapping("/owner/{ownerId}")

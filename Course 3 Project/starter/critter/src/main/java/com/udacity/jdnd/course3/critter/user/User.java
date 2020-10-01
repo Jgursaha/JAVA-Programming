@@ -5,12 +5,13 @@ import org.hibernate.annotations.Nationalized;
 
 import javax.persistence.*;
 
-@Entity
+//@Entity
+@MappedSuperclass
 @Inheritance(strategy = InheritanceType.JOINED)
 public class User {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
