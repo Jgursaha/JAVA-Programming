@@ -30,8 +30,8 @@ public class CustomerService {
         return optionalCustomer.orElse(null);
     }
 
-    public Customer findOwnerByPet(Long petId){
-        return customerRepository.findByPetId(petId);
-    }
+    //public Customer findOwnerByPet(Long petId){
+    //    return customerRepository.findByPetId(petId);
+    //}
 
 }

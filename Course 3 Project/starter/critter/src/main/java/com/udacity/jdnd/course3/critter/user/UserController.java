@@ -67,12 +67,11 @@ public class UserController {
 
     @GetMapping("/customer/pet/{petId}")
     public CustomerDTO getOwnerByPet(@PathVariable long petId){
-        Customer customer = customerService.findById(petId);
-
+        Pet pet = petService.findPet(petId);
+        Customer customer = pet.getCustomer();
         if(customer != null){
             return convertCustomerToCustomerDTO(customer);
         }
-
         throw new UnsupportedOperationException();
     }
 
@@ -90,13 +89,20 @@ public class UserController {
     }
 
     @PutMapping("/employee/{employeeId}")
-    public void setAvailability(@RequestBody Set<DayOfWeek> daysAvailable, @PathVariable long employeeId) {
-        throw new UnsupportedOperationException();
+    public void setAvailability(@RequestBody Set<DayOfWeek> daysAvailable, @PathVariable long employeeId){
+        employeeService.setDaysAvailable(daysAvailable, employeeId);
     }
 
     @GetMapping("/employee/availability")
     public List<EmployeeDTO> findEmployeesForService(@RequestBody EmployeeRequestDTO employeeDTO) {
-        throw new UnsupportedOperationException();
+        List<Employee> employees = employeeService.findEmployeesForService(employeeDTO.getDate(), employeeDTO.getSkills());
+        List<EmployeeDTO> employeeDTOS = new ArrayList<>();
+
+        for(Employee employee : employees){
+            employeeDTOS.add(convertEmployeeToEmployeeDTO(employee));
+        }
+
+        return employeeDTOS;
     }
 
     private CustomerDTO convertCustomerToCustomerDTO(Customer customer){

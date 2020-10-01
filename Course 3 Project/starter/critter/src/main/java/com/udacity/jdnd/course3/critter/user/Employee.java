@@ -4,6 +4,7 @@ import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import java.util.List;
 import java.util.Set;
+import java.time.DayOfWeek;
 
 @Entity
 public class Employee extends User{
