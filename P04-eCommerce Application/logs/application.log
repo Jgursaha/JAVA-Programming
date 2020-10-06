@@ -1,0 +1,27 @@
+2020-10-05T21:46:39.700+1100 INFO Starting SareetaApplication on Jiteshs-MBP with PID 68667 (started by JG in /Users/JG/Programming/JAVA Study/I2JND/JAVA-Programming/P04-eCommerce Application)
+2020-10-05T21:46:39.712+1100 DEBUG Running with Spring Boot v2.1.5.RELEASE, Spring v5.1.7.RELEASE
+2020-10-05T21:46:39.713+1100 INFO No active profile set, falling back to default profiles: default
+2020-10-05T21:46:45.345+1100 INFO Started SareetaApplication in 6.268 seconds (JVM running for 8.722)
+2020-10-05T21:48:10.347+1100 INFO User name set with 
+2020-10-05T21:48:18.260+1100 DEBUG Request is to process authentication
+2020-10-05T21:48:31.870+1100 INFO Received get request for username: test
+2020-10-06T17:07:26.848+1100 INFO Starting SareetaApplication on Jiteshs-MBP with PID 4850 (started by JG in /Users/JG/Programming/JAVA Study/I2JND/JAVA-Programming/P04-eCommerce Application)
+2020-10-06T17:07:26.863+1100 DEBUG Running with Spring Boot v2.1.5.RELEASE, Spring v5.1.7.RELEASE
+2020-10-06T17:07:26.866+1100 INFO No active profile set, falling back to default profiles: default
+2020-10-06T17:07:32.752+1100 INFO Started SareetaApplication in 6.782 seconds (JVM running for 9.581)
+2020-10-06T20:57:10.286+1100 INFO Starting SareetaApplication on Jiteshs-MBP with PID 8554 (started by JG in /Users/JG/Programming/JAVA Study/I2JND/JAVA-Programming/P04-eCommerce Application)
+2020-10-06T20:57:10.313+1100 DEBUG Running with Spring Boot v2.1.5.RELEASE, Spring v5.1.7.RELEASE
+2020-10-06T20:57:10.315+1100 INFO No active profile set, falling back to default profiles: default
+2020-10-06T20:57:17.110+1100 INFO Started SareetaApplication in 7.709 seconds (JVM running for 10.374)
+2020-10-06T21:05:40.253+1100 INFO User name set with 
+2020-10-06T21:05:40.484+1100 INFO User created. UserName: test
+2020-10-06T21:05:45.324+1100 INFO User name set with 
+2020-10-06T21:05:45.435+1100 INFO User created. UserName: test1
+2020-10-06T21:05:49.393+1100 INFO User name set with 
+2020-10-06T21:05:49.498+1100 INFO User created. UserName: test2
+2020-10-06T21:06:18.026+1100 INFO User name set with 
+2020-10-06T21:06:18.141+1100 INFO User created. UserName: test3
+2020-10-06T21:06:55.478+1100 INFO User name set with 
+2020-10-06T21:06:55.586+1100 INFO User created. UserName: test4
+2020-10-06T21:07:01.571+1100 INFO User name set with 
+2020-10-06T21:07:01.672+1100 INFO User created. UserName: test5

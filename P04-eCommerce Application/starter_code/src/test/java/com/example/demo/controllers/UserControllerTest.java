@@ -28,6 +28,10 @@ public class UserControllerTest {
         TestUtils.injectObject(userController, "userRepository", userRepository);
         TestUtils.injectObject(userController, "cartRepository", cartRepository);
         TestUtils.injectObject(userController, "bCryptPasswordEncoder", encoder);
+
+        User user = new User();
+        user.setId(0);
+        when(userRepository.findById(0L)).thenReturn(java.util.Optional.of(user));
     }
 
     @Test
@@ -50,5 +54,36 @@ public class UserControllerTest {
         assertEquals("test", u.getUsername());
         assertEquals("thisIsHashed", u.getPassword());
 
+    }
+
+    @Test
+    public void verify_password_length_criteria(){
+        CreateUserRequest r = new CreateUserRequest();
+        r.setUsername("test");
+        r.setPassword("abcde");
+        r.setConfirmPassword("abcde");
+
+        final ResponseEntity<User> response = userController.createUser(r);
+        assertEquals(400, response.getStatusCodeValue());
+    }
+
+    @Test
+    public void verify_find_user_by_id(){
+        final ResponseEntity<User> response = userController.findById(0L);
+        assertEquals(200, response.getStatusCodeValue());
+
+        User user = response.getBody();
+        assertEquals(0, user.getId());
+    }
+
+    @Test
+    public void verify_confirm_password_criteria(){
+        CreateUserRequest r = new CreateUserRequest();
+        r.setUsername("test");
+        r.setPassword("testPassword");
+        r.setConfirmPassword("testPassword1");
+
+        final ResponseEntity<User> response = userController.createUser(r);
+        assertEquals(400, response.getStatusCodeValue());
     }
 }
