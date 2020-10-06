@@ -77,5 +77,34 @@ public class CartControllerTest {
         assertEquals(404, response.getStatusCodeValue());
     }
 
+    @Test
+    public void verify_add_to_cart_item_not_found(){
+        ModifyCartRequest cartRequest = new ModifyCartRequest();
+        cartRequest.setItemId(1L);
+        cartRequest.setUsername("test");
+        cartRequest.setQuantity(2);
 
+        ResponseEntity<Cart> response = cartController.addTocart(cartRequest);
+        assertEquals(404, response.getStatusCodeValue());
+    }
+
+    @Test public void verify_remove_from_cart(){
+        ModifyCartRequest cartRequest = new ModifyCartRequest();
+        cartRequest.setItemId(0L);
+        cartRequest.setUsername("test");
+        cartRequest.setQuantity(2);
+
+        ResponseEntity<Cart> response = cartController.addTocart(cartRequest);
+        assertEquals(200, response.getStatusCodeValue());
+
+        ModifyCartRequest cartRequest1 = new ModifyCartRequest();
+        cartRequest1.setItemId(0L);
+        cartRequest1.setUsername("test");
+        cartRequest1.setQuantity(1);
+
+        response = cartController.removeFromcart(cartRequest1);
+        assertEquals(200, response.getStatusCodeValue());
+        Cart cart = response.getBody();
+        assertEquals(BigDecimal.valueOf(7.50), cart.getTotal());
+    }
 }

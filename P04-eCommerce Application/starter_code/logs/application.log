@@ -32,3 +32,12 @@
 2020-10-06T20:53:46.432+1100 INFO User name set with 
 2020-10-06T20:53:46.439+1100 INFO User created. UserName: test
 2020-10-06T20:53:46.444+1100 INFO Received get request
+2020-10-07T00:16:36.740+1100 ERROR Order could not be created for username: test1
+2020-10-07T00:16:36.775+1100 INFO Order created successfully for username: test
+2020-10-07T00:16:51.632+1100 INFO User name set with 
+2020-10-07T00:16:51.641+1100 ERROR Error with user password. Cannot create usertest
+2020-10-07T00:16:51.665+1100 INFO User name set with 
+2020-10-07T00:16:51.669+1100 ERROR Error with user password. Cannot create usertest
+2020-10-07T00:16:51.682+1100 INFO User name set with 
+2020-10-07T00:16:51.688+1100 INFO User created. UserName: test
+2020-10-07T00:16:51.690+1100 INFO Received get request
