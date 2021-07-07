@@ -17,7 +17,7 @@ import java.util.List;
                 query = "select d from Delivery d where d.recipientName = :recipientName")
 })
 
-
+@Entity //there was mp @Entity here, so spring JPA could not infer relationships pointing to this entity
 public class Delivery {
 
     @Id
